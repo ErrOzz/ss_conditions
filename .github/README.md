@@ -22,7 +22,7 @@
 2. В настройках удалённого PAC указать ссылку на PAC файл
 3. У системного прокси сервера включить режим работы - Сценарий настройки (PAC)
 
-Ссылка на PAC файл: https://raw.githubusercontent.com/An-Eugene/ss_conditions/main/ss_conditions.pac
+Ссылка на PAC файл: https://raw.githubusercontent.com/ErrOzz/ss_conditions/main/ss_conditions.pac
 
 
 ## Shadowsocks для Linux
@@ -41,7 +41,7 @@ TODO: дописать и отладить работу SS на Linux
 2. В настройках сервера указать маршрут - Пользовательские правила
 3. Зайти в пользовательские правила -> добавить правило -> URL конфигурации и указать ссылку на ACL файл
 
-Ссылка на ACL файл: https://raw.githubusercontent.com/An-Eugene/ss_conditions/main/ss_conditions.acl
+Ссылка на ACL файл: https://raw.githubusercontent.com/ErrOzz/ss_conditions/main/ss_conditions.acl
 
 
 ## Клиент ShadowSocks для iOS
