@@ -19,7 +19,7 @@ echo "];" >> ../ss_conditions.pac
 cat ../templates/ss_conditions_template.pac >> ../ss_conditions.pac
 
 # make PAC_tmp file
-cat ../ss_conditions.pac >> ../ss_cond_tmp.pac
+cat ../ss_conditions.pac > ../ss_cond_tmp.pac
 sed -i 's/1080/1081/' ../ss_cond_tmp.pac
 
 # parse both rules_proxy and rules_direct and make ACL file
