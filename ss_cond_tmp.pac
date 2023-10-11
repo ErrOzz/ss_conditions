@@ -205,4 +205,5 @@ var __BLOCKEDSITES__ = [
   "*.yle.fi",
   "*.zahav.ru",
   "*.zerkalo.io",
-  "*.zona.media",
+  "*.zona.media"
+];
