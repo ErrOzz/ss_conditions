@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# parse rules_proxy and make PAC file
+# parse rules_proxy and make PAC files
 mapfile -t lines < ../rules/rules_proxy
 for ((i=0; i<${#lines[@]}; i++)); do
     line=${lines[i]}
@@ -9,18 +9,19 @@ for ((i=0; i<${#lines[@]}; i++)); do
     fi
 done
 
-echo "var __BLOCKEDSITES__ = [" > ../ss_conditions.pac
+echo "var __BLOCKEDSITES__ = [" > ../ss_conditions_1080.pac
 for line in "${lines[@]}"; do
-    echo "  \"$line\"," >> ../ss_conditions.pac
+    echo "  \"$line\"," >> ../ss_conditions_1080.pac
 done
-sed -i '$ s/,$//' ../ss_conditions.pac
-echo "];" >> ../ss_conditions.pac
+sed -i '$ s/,$//' ../ss_conditions_1080.pac
+echo "];" >> ../ss_conditions_1080.pac
 
-cat ../templates/ss_conditions_template.pac >> ../ss_conditions.pac
+cat ../ss_conditions_1080.pac > ../ss_conditions_1081.pac
+cat ../ss_conditions_1080.pac > ../ss_conditions_1082.pac
 
-# make PAC_tmp file
-cat ../ss_conditions.pac > ../ss_cond_tmp.pac
-sed -i 's/1080/1081/' ../ss_cond_tmp.pac
+sed 's/PORT_NUM/1080/g' ../templates/ss_conditions_template.pac >> ../ss_conditions_1080.pac
+sed 's/PORT_NUM/1081/g' ../templates/ss_conditions_template.pac >> ../ss_conditions_1081.pac
+sed 's/PORT_NUM/1082/g' ../templates/ss_conditions_template.pac >> ../ss_conditions_1082.pac
 
 # parse both rules_proxy and rules_direct and make ACL file
 echo "[bypass_all]" > ../ss_conditions.acl
