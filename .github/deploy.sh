@@ -18,6 +18,22 @@ echo "];" >> ../ss_conditions.pac
 
 cat ../templates/ss_conditions_template.pac >> ../ss_conditions.pac
 
+# parse rules_proxy and make PAC tmp file
+mapfile -t lines < ../rules/rules_proxy
+for ((i=0; i<${#lines[@]}; i++)); do
+    line=${lines[i]}
+    if [[ $line == *.* && $line != *.*.* && ${line:0:2} != '*.' ]]; then
+        lines[i]="*.$line"
+    fi
+done
+
+echo "var __BLOCKEDSITES__ = [" > ../ss_cond_tmp.pac
+for line in "${lines[@]}"; do
+    echo "  \"$line\"," >> ../ss_cond_tmp.pac
+done
+#sed -i '$ s/,$//' ../ss_cond_tmp.pac
+#echo "];" >> ../ss_cond_tmp.pac
+
 # parse both rules_proxy and rules_direct and make ACL file
 echo "[bypass_all]" > ../ss_conditions.acl
 echo "" >> ../ss_conditions.acl
