@@ -22,8 +22,10 @@
 2. В настройках удалённого PAC указать ссылку на PAC файл
 3. У системного прокси сервера включить режим работы - Сценарий настройки (PAC)
 
-Ссылка на PAC файл: https://raw.githubusercontent.com/ErrOzz/ss_conditions/main/ss_conditions.pac
-
+Ссылка на PAC файлы с разными номерами портов:
+https://raw.githubusercontent.com/ErrOzz/ss_conditions/main/ss_conditions_1080.pac
+https://raw.githubusercontent.com/ErrOzz/ss_conditions/main/ss_conditions_1081.pac
+https://raw.githubusercontent.com/ErrOzz/ss_conditions/main/ss_conditions_1082.pac
 
 ## Shadowsocks для Linux
 1. Установить Clash: `sudo apt install clash`
@@ -51,7 +53,7 @@ TODO: дописать и отладить работу SS на Linux
 3. Зайти во вкладку "Config" -> Remote files -> указать ссылку на .CONF файл
 4. На главной странице выбрать "Global Routing" -> Config
 
-Ссылка на CONF файл: https://raw.githubusercontent.com/An-Eugene/ss_conditions/main/ss_conditions.conf
+Ссылка на CONF файл: https://raw.githubusercontent.com/ErrOzz/ss_conditions/main/ss_conditions.conf
 
 ### Shadowlink для iOS (неавтоматическое, но бесплатное решение)
 1. Установить [Shadowlink из AppStore](https://apps.apple.com/us/app/shadowlink-shadowsocks-proxy/id1439686518 "Shadowlink for iOS"). **Отказаться от всех навязываемых подписок и пробных периодов**: нас не интересуют сервера по умолчанию, мы добавляем собственную конфигурацию
@@ -76,9 +78,9 @@ TODO: дописать и отладить работу SS на Linux
    5. Сохранить изменения
 7. Выбрать необходимый профиль (PAC или auto switch)
 
-Ссылка на PAC файл: https://raw.githubusercontent.com/An-Eugene/ss_conditions/main/ss_conditions.pac
+Ссылка на PAC файл: https://raw.githubusercontent.com/ErrOzz/ss_conditions/main/ss_conditions_1080.pac
 
-**Внимание:** убедитесь, что Shadowsocks работает на порту 1080! Этот порт захардкоден и в PAC файл, поэтому менять смысла нет
+**Внимание:** убедитесь, что Shadowsocks работает на порту 1080, 1081 или 1082 в соответствии с установленным PAC файлом! Этот порт захардкоден и в PAC файл, поэтому менять смысла нет
 
 **Внимание №2:** профиль auto switch нужен чтобы в 2 клика перенаправить не открывающийся сайт через прокси. Для этого и создаётся профиль proxy, чтобы было на что перенаправлять трафик. ***Если нашли нужный сайт, заблокированный в России - отправьте его мне, чтобы я добавил его в список***
 
