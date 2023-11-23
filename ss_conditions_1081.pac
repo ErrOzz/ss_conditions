@@ -6,6 +6,7 @@ var __BLOCKEDSITES__ = [
   "*.activatica.org",
   "*.adguard.com",
   "*.agents.media",
+  "*.agentura.ru",
   "*.antiwar.in",
   "*.appleinsider.ru",
   "*.appspot.com",
