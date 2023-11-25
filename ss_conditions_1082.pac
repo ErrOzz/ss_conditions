@@ -17,6 +17,7 @@ var __BLOCKEDSITES__ = [
   "*.azattyq.com",
   "*.bbc.com",
   "*.bbc.co.uk",
+  "*.bbci.co.uk",
   "*.bellingcat.com",
   "*.bild.de",
   "*.blackseanews.net",
