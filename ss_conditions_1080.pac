@@ -15,6 +15,7 @@ var __BLOCKEDSITES__ = [
   "*.aussiedlerbote.de",
   "*.azathabar.com",
   "*.azattyq.com",
+  "bard.google.com",
   "*.bbc.com",
   "*.bbc.co.uk",
   "*.bbci.co.uk",
