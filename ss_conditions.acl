@@ -8,14 +8,17 @@
 (?:^|\.)activatica\.org$
 (?:^|\.)adguard\.com$
 (?:^|\.)agents\.media$
+(?:^|\.)agentura\.ru$
 (?:^|\.)antiwar\.in$
 (?:^|\.)appleinsider\.ru$
 (?:^|\.)appspot\.com$
 (?:^|\.)arbat\.media$
 (?:^|\.)archiveofourown\.org$
+(?:^|\.)aussiedlerbote\.de$
 (?:^|\.)azathabar\.com$
 (?:^|\.)azattyq\.com$
 (?:^|\.)bbc\.com$
+(?:^|\.)*\.bbc\.co\.uk$
 (?:^|\.)*\.bbci\.co\.uk$
 (?:^|\.)bellingcat\.com$
 (?:^|\.)bild\.de$
