@@ -68,6 +68,7 @@ var __BLOCKEDSITES__ = [
   "*.getoutline.com",
   "*.getsignal.news",
   "yt3.ggpht.com",
+  "aistudio.google.com",
   "bard.google.com",
   "gemini.google.com",
   "news.google.com",
