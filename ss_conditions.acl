@@ -21,10 +21,10 @@
 (?:^|\.)*\.bbc\.co\.uk$
 (?:^|\.)*\.bbci\.co\.uk$
 (?:^|\.)bellingcat\.com$
-(?:^|\.)*\.bergfreunde\.eu$
+(?:^|\.)bergfreunde\.eu$
 (?:^|\.)bfgcdn\.com$
 (?:^|\.)bild\.de$
-(?:^|\.)*\.bing\.com$
+(?:^|\.)bing\.com$
 (?:^|\.)blackseanews\.net$
 (?:^|\.)carousell\.sg$
 (?:^|\.)cdninstagram\.com$
@@ -32,8 +32,8 @@
 (?:^|\.)chatgpt\.com$
 (?:^|\.)cherta\.media$
 (?:^|\.)colta\.ru$
-(?:^|\.)*\.githubcopilot\.com$
-(?:^|\.)*\.copilot\.cx$
+(?:^|\.)githubcopilot\.com$
+(?:^|\.)copilot\.cx$
 (?:^|\.)crocoblock\.com$
 (?:^|\.)currenttime\.tv$
 (?:^|\.)cyxymu\.info$
@@ -71,8 +71,11 @@
 (?:^|\.)getoutline\.com$
 (?:^|\.)getsignal\.news$
 ^yt3\.ggpht\.com$
+^accounts\.google\.com$
 ^aistudio\.google\.com$
+^apis\.google\.com$
 ^bard\.google\.com$
+(?:^|\.)*\.clients6\.google\.com$
 ^gemini\.google\.com$
 ^news\.google\.com$
 ^play\.google\.com$
