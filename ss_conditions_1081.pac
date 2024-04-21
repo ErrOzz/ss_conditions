@@ -322,13 +322,13 @@ var __BLOCKEDSITES__ = [
 var proxy;
 var direct;
 
-// if (typeof __PROXY__ === "undefined") {
-//     proxy = "SOCKS5 127.0.0.1:1081; SOCKS 127.0.0.1:1081";
-//     direct = "DIRECT";
-// } else {
+if (typeof __PROXY__ === "undefined") {
+    proxy = "SOCKS5 127.0.0.1:1081; SOCKS 127.0.0.1:1081";
+    direct = "DIRECT";
+} else {
     proxy = __PROXY__;
     direct = "DIRECT;";
-// }
+}
 
 var FindProxyForURL = function(init, profiles) {
     return function(url, host) {
