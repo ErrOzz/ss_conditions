@@ -29,8 +29,8 @@ var __BLOCKEDSITES__ = [
   "*.centre-t.com",
   "*.chatgpt.com",
   "*.cherta.media",
+  "*.claude.ai",
   "*.colta.ru",
-  "*.githubcopilot.com",
   "*.copilot.cx",
   "*.crocoblock.com",
   "*.currenttime.tv",
@@ -69,6 +69,7 @@ var __BLOCKEDSITES__ = [
   "*.getoutline.com",
   "*.getsignal.news",
   "yt3.ggpht.com",
+  "*.githubcopilot.com",
   "accounts.google.com",
   "aistudio.google.com",
   "apis.google.com",
@@ -132,6 +133,9 @@ var __BLOCKEDSITES__ = [
   "*.novyny.live",
   "*.odessa.online",
   "*.oaistatic.com",
+  "*.oaiusercontent.com",
+  "*.oculus.com",
+  "*.odessa.online",
   "*.openai.com",
   "*.openai.org",
   "*.openmedia.io",
@@ -230,13 +234,13 @@ var __BLOCKEDSITES__ = [
 var proxy;
 var direct;
 
-if (typeof __PROXY__ === "undefined") {
-    proxy = "SOCKS5 127.0.0.1:1081; SOCKS 127.0.0.1:1081";
-    direct = "DIRECT";
-} else {
+// if (typeof __PROXY__ === "undefined") {
+//     proxy = "SOCKS5 127.0.0.1:1081; SOCKS 127.0.0.1:1081";
+//     direct = "DIRECT";
+// } else {
     proxy = __PROXY__;
     direct = "DIRECT;";
-}
+// }
 
 var FindProxyForURL = function(init, profiles) {
     return function(url, host) {
