@@ -2,13 +2,13 @@
 var proxy;
 var direct;
 
-if (typeof __PROXY__ === "undefined") {
-    proxy = "SOCKS5 127.0.0.1:PORT_NUM; SOCKS 127.0.0.1:PORT_NUM";
-    direct = "DIRECT";
-} else {
+// if (typeof __PROXY__ === "undefined") {
+//     proxy = "SOCKS5 127.0.0.1:PORT_NUM; SOCKS 127.0.0.1:PORT_NUM";
+//     direct = "DIRECT";
+// } else {
     proxy = __PROXY__;
     direct = "DIRECT;";
-}
+// }
 
 var FindProxyForURL = function(init, profiles) {
     return function(url, host) {
