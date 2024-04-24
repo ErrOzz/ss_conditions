@@ -107,6 +107,7 @@ var __BLOCKEDSITES__ = [
   "news.google.com",
   "play.google.com",
   "*.google.dev",
+  "*.googleapis.com",
   "*.grani.ru",
   "*.graty.me",
   "*.greenmangaming.com",
