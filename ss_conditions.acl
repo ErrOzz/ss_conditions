@@ -14,6 +14,7 @@
 (?:^|\.)adguard\.com$
 (?:^|\.)agents\.media$
 (?:^|\.)agentura\.ru$
+(?:^|\.)amnezia\.org$
 ^aws\.amazon\.com$
 (?:^|\.)anime-portal\.ru$
 (?:^|\.)animedub\.ru$
@@ -49,6 +50,8 @@
 (?:^|\.)cherta\.media$
 (?:^|\.)claude\.ai$
 (?:^|\.)colta\.ru$
+(?:^|\.)compromat\.group$
+(?:^|\.)compromat01\.group$
 (?:^|\.)copilot\.cx$
 (?:^|\.)crocoblock\.com$
 (?:^|\.)cropp\.com$
@@ -95,7 +98,7 @@
 (?:^|\.)furaffinity\.net$
 (?:^|\.)gagadget\.com$
 (?:^|\.)germania\.one$
-(?:^|\.)getoutline\.com$
+(?:^|\.)getoutline\.org$
 (?:^|\.)getsignal\.news$
 ^yt3\.ggpht\.com$
 (?:^|\.)githubcopilot\.com$
@@ -144,6 +147,7 @@
 (?:^|\.)korrespondent\.net$
 (?:^|\.)krymr\.com$
 (?:^|\.)kym-cdn\.com$
+(?:^|\.)lantern\.io$
 (?:^|\.)lentachel\.ru$
 (?:^|\.)leonidvolkov\.ru$
 (?:^|\.)libgen\.is$
@@ -164,6 +168,7 @@
 (?:^|\.)mediazona\.ca$
 (?:^|\.)medium\.com$
 (?:^|\.)meduza\.io$
+(?:^|\.)memopzk\.org$
 (?:^|\.)memorialcenter\.org$
 (?:^|\.)merezha\.co$
 (?:^|\.)meta\.com$
@@ -174,6 +179,7 @@
 (?:^|\.)mignews\.com$
 (?:^|\.)miniplay\.com$
 (?:^|\.)mintmanga\.live$
+(?:^|\.)moscow-post\.su$
 (?:^|\.)myrotvorets\.center$
 ^echo\.msk\.ru$
 (?:^|\.)navalny\.com$
@@ -195,6 +201,7 @@
 (?:^|\.)oaiusercontent\.com$
 (?:^|\.)oculus\.com$
 (?:^|\.)odessa\.online$
+(?:^|\.)onelogin\.com$
 (?:^|\.)openai\.com$
 (?:^|\.)openai\.org$
 (?:^|\.)openmedia\.io$
@@ -212,16 +219,19 @@
 (?:^|\.)pexels\.com$
 (?:^|\.)pixiv\.net$
 (?:^|\.)platforma\.international$
+(?:^|\.)polit\.ru$
 (?:^|\.)politiken\.dk$
 (?:^|\.)posle\.media$
 (?:^|\.)postimees\.ee$
 (?:^|\.)proekt\.media$
+(?:^|\.)proton\.me$
 (?:^|\.)provereno\.media$
 (?:^|\.)putin-killer\.com$
 (?:^|\.)quest\.com$
 (?:^|\.)quora\.com$
 (?:^|\.)radiosakharov\.org$
 (?:^|\.)realist\.online$
+(?:^|\.)redshieldvpn\.com$
 (?:^|\.)remove\.bg$
 (?:^|\.)rentry\.co$
 (?:^|\.)republic\.ru$
@@ -230,6 +240,8 @@
 (?:^|\.)rferl\.org$
 (?:^|\.)roar-review\.com$
 (?:^|\.)root-nation\.com$
+(?:^|\.)rsf\.org$
+(?:^|\.)rucriminal\.info$
 (?:^|\.)rule34\.xxx$
 (?:^|\.)rutor\.info$
 (?:^|\.)rutor\.is$
@@ -244,6 +256,7 @@
 (?:^|\.)scrolller\.com$
 (?:^|\.)semnasem\.org$
 (?:^|\.)severreal\.org$
+(?:^|\.)shadowsocks\.org$
 (?:^|\.)shikimori\.me$
 (?:^|\.)sibreal\.org$
 (?:^|\.)skat\.media$
