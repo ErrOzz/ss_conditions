@@ -230,6 +230,7 @@ var __BLOCKEDSITES__ = [
   "*.radiosakharov.org",
   "*.realist.online",
   "*.redshieldvpn.com",
+  "*.reka.ai",
   "*.remove.bg",
   "*.rentry.co",
   "*.republic.ru",
