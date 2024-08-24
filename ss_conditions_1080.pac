@@ -82,6 +82,7 @@ var __BLOCKEDSITES__ = [
   "*.cyprus-mail.com",
   "*.cyprustimes.com",
   "*.cyxymu.info",
+  "*.dailymotion.com",
   "*.daz3d.com",
   "*.deepstatemap.live",
   "*.delfi.ee",
