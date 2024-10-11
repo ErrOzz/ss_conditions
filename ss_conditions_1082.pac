@@ -215,6 +215,7 @@ var __BLOCKEDSITES__ = [
   "*.libgen.st",
   "*.liga.net",
   "*.linkedin.com",
+  "*.linkt.ee",
   "*.livehdcams.com",
   "*.locals.md",
   "*.lolz.guru",
