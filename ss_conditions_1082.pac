@@ -29,6 +29,7 @@ var __BLOCKEDSITES__ = [
   "*.animego.today",
   "*.animelib.me",
   "*.animevost.tv",
+  "*.anthropic.com",
   "*.antiwar.in",
   "*.antiwarcommittee.info",
   "*.apollo.lv",
