@@ -332,6 +332,7 @@
 (?:^|\.)paperpaper\.ru$
 (?:^|\.)paperpaper\.io$
 (?:^|\.)patreon\.com$
+(?:^|\.)perplexity\.ai$
 (?:^|\.)pcgamesn\.com$
 (?:^|\.)pexels\.com$
 (?:^|\.)pixiv\.net$
@@ -828,6 +829,7 @@
 (?:^|\.)paperpaper\.ru$
 (?:^|\.)paperpaper\.io$
 (?:^|\.)patreon\.com$
+(?:^|\.)perplexity\.ai$
 (?:^|\.)pcgamesn\.com$
 (?:^|\.)pexels\.com$
 (?:^|\.)pixiv\.net$

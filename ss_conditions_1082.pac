@@ -330,6 +330,7 @@ var __BLOCKEDSITES__ = [
   "*.paperpaper.ru",
   "*.paperpaper.io",
   "*.patreon.com",
+  "*.perplexity.ai",
   "*.pcgamesn.com",
   "*.pexels.com",
   "*.pixiv.net",
