@@ -366,6 +366,7 @@ var __BLOCKEDSITES__ = [
   "*.redis.io",
   "*.redshieldvpn.com",
   "*.refactoring.guru",
+  "*.reka.ai",
   "*.remove.bg",
   "*.rentry.co",
   "*.repubblica.it",
