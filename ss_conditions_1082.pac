@@ -278,6 +278,7 @@ var __BLOCKEDSITES__ = [
   "*.miniplay.com",
   "*.mintmanga.live",
   "*.moscow-post.su",
+  "*.mouser.com",
   "*.myrotvorets.center",
   "echo.msk.ru",
   "*.navalny.com",
