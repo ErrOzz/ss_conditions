@@ -303,6 +303,7 @@ var __BLOCKEDSITES__ = [
   "*.novyny.live",
   "*.nrc.nl",
   "*.ntc.party",
+  "*.nxp.com",
   "*.nyaa.si",
   "*.oaistatic.com",
   "*.oaiusercontent.com",
