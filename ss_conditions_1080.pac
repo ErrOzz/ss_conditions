@@ -443,6 +443,7 @@ var __BLOCKEDSITES__ = [
   "*.themegrill.com",
   "*.thenewtab.io",
   "*.thepiratebay.org",
+  "*.ti.com",
   "*.tidal.com",
   "*.timesofmalta.com",
   "*.tjournal.ru",
