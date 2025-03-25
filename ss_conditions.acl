@@ -172,8 +172,6 @@
 (?:^|\.)getoutline\.org$
 (?:^|\.)getsignal\.news$
 ^yt3\.ggpht\.com$
-(?:^|\.)github\.com$
-(?:^|\.)githubcopilot\.com$
 (?:^|\.)godaddy\.com$
 ^accounts\.google\.com$
 ^apis\.google\.com$
@@ -673,8 +671,6 @@
 (?:^|\.)getoutline\.org$
 (?:^|\.)getsignal\.news$
 ^yt3\.ggpht\.com$
-(?:^|\.)github\.com$
-(?:^|\.)githubcopilot\.com$
 (?:^|\.)godaddy\.com$
 ^accounts\.google\.com$
 ^apis\.google\.com$
