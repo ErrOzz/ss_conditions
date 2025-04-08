@@ -481,6 +481,7 @@ var __BLOCKEDSITES__ = [
   "*.windscribe.com",
   "*.wixmp.com",
   "*.wonderzine.com",
+  "x ai",
   "*.x.com",
   "*.yande.re",
   "*.yaoilib.me",
