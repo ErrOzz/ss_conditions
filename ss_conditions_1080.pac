@@ -179,6 +179,7 @@ var __BLOCKEDSITES__ = [
   "*.clients6.google.com",
   "gemini.google.com",
   "news.google.com",
+  "notebooklm.google.com",
   "play.google.com",
   "*.google.dev",
   "*.googleapis.com",
