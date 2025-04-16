@@ -1,13 +1,27 @@
 #!/bin/bash
 
-# parse rules_proxy and make PAC files
-mapfile -t lines < ../rules/rules_proxy
-for ((i=0; i<${#lines[@]}; i++)); do
-    line=${lines[i]}
-    # Skip comments and empty lines
-    if [[ $line =~ ^#.*$ || -z $line ]]; then
-        continue
+# Read rules_proxy once
+mapfile -t rules_proxy_lines < ../rules/rules_proxy
+
+# Filter out comments and empty lines
+filtered_lines=()
+for line in "${rules_proxy_lines[@]}"; do
+    if [[ ! $line =~ ^#.*$ && -n $line ]]; then
+        filtered_lines+=("$line")
     fi
+done
+
+# Use filtered_lines in all subsequent processing
+
+# parse rules_proxy and make PAC files
+for line in "${filtered_lines[@]}"; do
+# mapfile -t lines < ../rules/rules_proxy
+# for ((i=0; i<${#lines[@]}; i++)); do
+    # line=${lines[i]}
+    # Skip comments and empty lines
+    # if [[ $line =~ ^#.*$ || -z $line ]]; then
+        # continue
+    # fi
     if [[ $line == *.* && $line != *.*.* && ${line:0:2} != '*.' ]]; then
         lines[i]="*.$line"
     fi
