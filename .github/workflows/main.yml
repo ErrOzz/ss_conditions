@@ -17,9 +17,8 @@ jobs:
 
       - name: Execute deploy.sh
         run: |
-          cd .github
-          chmod +x deploy.sh
-          ./deploy.sh
+          chmod +x scripts/deploy.sh
+          bash scripts/deploy.sh
 
       - name: Push changes
         run: |
