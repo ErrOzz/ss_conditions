@@ -14,6 +14,7 @@ done
 # Use filtered_lines in all subsequent processing
 
 # parse rules_proxy and make PAC files
+lines=()  # Initialize an array to store transformed lines
 for line in "${filtered_lines[@]}"; do
 # mapfile -t lines < ../rules/rules_proxy
 # for ((i=0; i<${#lines[@]}; i++)); do
@@ -22,11 +23,17 @@ for line in "${filtered_lines[@]}"; do
     # if [[ $line =~ ^#.*$ || -z $line ]]; then
         # continue
     # fi
+    # if [[ $line == *.* && $line != *.*.* && ${line:0:2} != '*.' ]]; then
+        # lines[i]="*.$line"
+    # fi
     if [[ $line == *.* && $line != *.*.* && ${line:0:2} != '*.' ]]; then
-        lines[i]="*.$line"
+        lines+=("*.$line")  # Add transformed line to the array
+    else
+        lines+=("$line")  # Add unmodified line to the array
     fi
 done
 
+# Write PAC file
 echo "var __BLOCKEDSITES__ = [" > ../ss_conditions_1080.pac
 for line in "${lines[@]}"; do
     echo "  \"$line\"," >> ../ss_conditions_1080.pac
@@ -34,9 +41,11 @@ done
 sed -i '$ s/,$//' ../ss_conditions_1080.pac
 echo "];" >> ../ss_conditions_1080.pac
 
+# Duplicate PAC file for other ports
 cat ../ss_conditions_1080.pac > ../ss_conditions_1081.pac
 cat ../ss_conditions_1080.pac > ../ss_conditions_1082.pac
 
+# Replace PORT_NUM in templates
 sed 's/PORT_NUM/1080/g' ../templates/ss_conditions_template.pac >> ../ss_conditions_1080.pac
 sed 's/PORT_NUM/1081/g' ../templates/ss_conditions_template.pac >> ../ss_conditions_1081.pac
 sed 's/PORT_NUM/1082/g' ../templates/ss_conditions_template.pac >> ../ss_conditions_1082.pac
