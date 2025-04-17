@@ -13,20 +13,30 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Execute deploy.sh
         run: |
           chmod +x scripts/deploy.sh
           bash scripts/deploy.sh
 
-      - name: Push changes
+      - name: Commit and Push changes
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add .
-          git reset .github/
-          git restore .github/deploy.sh
-          git clean -df
-          git commit -m "Update files"
+
+          git add \
+            ./ss_conditions_*.pac \
+            ./ss_conditions.acl \
+            ./ss_conditions.conf \
+            ./ss_conditions_clash.conf \
+            || echo "::warning::No generated files found to add. Check deploy script output."
+
+          if git diff --staged --quiet; then
+            echo "No actual changes in generated files to commit."
+            exit 0
+          fi
+
+          echo "Changes detected in generated files. Committing and pushing..."
+          git commit -m "Update generated config files based on rules change"
           git push
