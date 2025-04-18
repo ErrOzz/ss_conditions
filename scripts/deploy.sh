@@ -140,9 +140,6 @@ echo "::group::Generating Clash CONF File"
 echo "::notice file=${CLASH_CONF_OUTPUT_FILE}::Created Clash CONF file."
 echo "::endgroup::"
 
-# Final completion message
-echo "::notice::Configuration file generation complete."
-
 # --- Generate Clash Rule Provider File ---
 echo "::group::Generating Clash Rule Provider file..."
 {
@@ -161,3 +158,6 @@ echo "::group::Generating Clash Rule Provider file..."
 } > "$CLASH_RULES_OUTPUT_FILE"
 echo "::notice file=${CLASH_RULES_OUTPUT_FILE}::Created Clash Rule Provider file."
 echo "::endgroup::"
+
+# Final completion message
+echo "::notice::Configuration file generation complete."
