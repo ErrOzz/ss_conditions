@@ -18,6 +18,7 @@ jobs:
       - name: Execute deploy.sh
         run: |
           chmod +x scripts/deploy.sh
+          cd scripts
           bash scripts/deploy.sh
 
       - name: Commit and Push changes
