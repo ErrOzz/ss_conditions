@@ -2,7 +2,7 @@
 set -euo pipefail # Enable strict mode
 
 # Read rules_proxy once
-mapfile -t rules_proxy_lines < ../rules/rules_proxy
+mapfile -t rules_proxy_lines < ./rules/rules_proxy
 
 # --- Constants ---
 RULES_FILE="../rules/rules_proxy"
