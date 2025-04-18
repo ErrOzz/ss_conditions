@@ -42,6 +42,7 @@ jobs:
           test -f ./ss_conditions.acl || (echo "::error::File ss_conditions.acl not found!" && exit 1)
           test -f ./ss_conditions.conf || (echo "::error::File ss_conditions.conf not found!" && exit 1)
           test -f ./ss_conditions_clash.conf || (echo "::error::File ss_conditions_clash.conf not found!" && exit 1)
+          test -f ./clash_proxy_rules.yaml || (echo "::error::File clash_proxy_rules.yaml not found!" && exit 1)
           echo "All expected files seem to be present."
 
       # This step is also optional but highly recommended for manual tests.
@@ -55,4 +56,5 @@ jobs:
             ./ss_conditions.acl
             ./ss_conditions.conf
             ./ss_conditions_clash.conf
+            ./clash_proxy_rules.yaml
           if-no-files-found: error # Fail the workflow if no files are found to upload

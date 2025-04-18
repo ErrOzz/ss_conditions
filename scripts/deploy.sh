@@ -18,6 +18,7 @@ PAC_BASE_NAME="ss_conditions"
 ACL_OUTPUT_FILE="${OUTPUT_DIR}/ss_conditions.acl"
 CONF_OUTPUT_FILE="${OUTPUT_DIR}/ss_conditions.conf"
 CLASH_CONF_OUTPUT_FILE="${OUTPUT_DIR}/ss_conditions_clash.conf"
+CLASH_RULES_OUTPUT_FILE="${OUTPUT_DIR}/clash_proxy_rules.yaml"
 
 # --- Input File Checks ---
 if [[ ! -f "$RULES_FILE" ]]; then
@@ -141,3 +142,22 @@ echo "::endgroup::"
 
 # Final completion message
 echo "::notice::Configuration file generation complete."
+
+# --- Generate Clash Rule Provider File ---
+echo "::group::Generating Clash Rule Provider file..."
+{
+    echo "payload:"
+    for line in "${filtered_lines[@]}"; do
+        # IP CIDR rule
+        if [[ $line =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(/.*)?$ ]]; then
+            echo "  - IP-CIDR,$line,PROXY" >> "$CLASH_RULES_OUTPUT_FILE"
+            continue
+        else
+            # DOMAIN-SUFFIX rule
+            local clash_line=${line#\*\.}
+            echo "  - DOMAIN-SUFFIX,${clash_line},PROXY"
+        fi
+    done
+} > "$CLASH_RULES_OUTPUT_FILE"
+echo "::notice file=${CLASH_RULES_OUTPUT_FILE}::Created Clash Rule Provider file."
+echo "::endgroup::"

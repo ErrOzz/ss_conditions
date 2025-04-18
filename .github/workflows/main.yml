@@ -30,6 +30,7 @@ jobs:
             ./ss_conditions.acl \
             ./ss_conditions.conf \
             ./ss_conditions_clash.conf \
+            ./clash_proxy_rules.yaml \
             || echo "::warning::No generated files found to add. Check deploy script output."
 
           if git diff --staged --quiet; then
