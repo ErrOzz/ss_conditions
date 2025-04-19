@@ -66,7 +66,7 @@ for line in "${filtered_lines[@]}"; do
         acl_rules+=("^${line//./\\.}$")
     elif [[ $line == *.* ]]; then
         # 2nd level domain or wildcard: escape dots, add non-capturing group for start or dot, add end anchor $
-        acl_rules+="(?:^|\\.)${line//./\\.}$"
+        acl_rules+=("(?:^|\\.)${line//./\\.}$")
     else
         acl_rules+=("$line")
     fi
