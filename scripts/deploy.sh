@@ -1,9 +1,6 @@
 #!/bin/bash
 set -euo pipefail # Enable strict mode
 
-# Read rules_proxy once
-mapfile -t rules_proxy_lines < ../rules/rules_proxy
-
 # --- Constants ---
 RULES_FILE="../rules/rules_proxy"
 TEMPLATE_DIR="../templates"
@@ -19,6 +16,9 @@ ACL_OUTPUT_FILE="${OUTPUT_DIR}/ss_conditions.acl"
 CONF_OUTPUT_FILE="${OUTPUT_DIR}/ss_conditions.conf"
 CLASH_CONF_OUTPUT_FILE="${OUTPUT_DIR}/ss_conditions_clash.conf"
 CLASH_RULES_OUTPUT_FILE="${OUTPUT_DIR}/clash_proxy_rules.yaml"
+
+# Read rules_proxy once
+mapfile -t rules_proxy_lines < $RULES_FILE
 
 # --- Input File Checks ---
 if [[ ! -f "$RULES_FILE" ]]; then
@@ -63,10 +63,10 @@ for line in "${filtered_lines[@]}"; do
         acl_rules+=("$line")  # IP CIDR - no changes
     elif [[ $line == *.*.* && ${line:0:2} != '*.' ]]; then
         # Exact 3rd level domain: escape dots, add anchors ^$
-        acl_rules+=("^${line//./\\.}")
+        acl_rules+=("^${line//./\\.}$")
     elif [[ $line == *.* ]]; then
         # 2nd level domain or wildcard: escape dots, add non-capturing group for start or dot, add end anchor $
-        acl_rules+="(?:^|\\.)${line//./\\.}"
+        acl_rules+="(?:^|\\.)${line//./\\.}$"
     else
         acl_rules+=("$line")
     fi
