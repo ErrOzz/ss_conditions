@@ -23,7 +23,6 @@ var __BLOCKEDSITES__ = [
   "*.agentura.ru",
   "*.amnezia.org",
   "aws.amazon.com",
-  "*.animego.today",
   "*.animelib.me",
   "*.animevost.tv",
   "*.anthropic.com",
