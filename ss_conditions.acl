@@ -167,8 +167,8 @@
 (?:^|\.)germania\.one$
 (?:^|\.)getoutline\.org$
 (?:^|\.)getsignal\.news$
-(?:^|\.)grok\.com$
 ^yt3\.ggpht\.com$
+(?:^|\.)githubusercontent\.com$
 (?:^|\.)godaddy\.com$
 ^accounts\.google\.com$
 ^apis\.google\.com$
@@ -185,6 +185,7 @@
 (?:^|\.)grani\.ru$
 (?:^|\.)graty\.me$
 (?:^|\.)greenmangaming\.com$
+(?:^|\.)grok\.com$
 (?:^|\.)gulag\.cz$
 (?:^|\.)gulagu\.net$
 (?:^|\.)hdrezka\.ag$
