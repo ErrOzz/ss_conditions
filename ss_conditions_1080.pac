@@ -166,7 +166,7 @@ var __BLOCKEDSITES__ = [
   "*.getoutline.org",
   "*.getsignal.news",
   "yt3.ggpht.com",
-  "*.githubusercontent.com",
+  "*.githubcopilot.com",
   "*.godaddy.com",
   "accounts.google.com",
   "apis.google.com",
