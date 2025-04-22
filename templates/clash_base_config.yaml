@@ -38,11 +38,11 @@ proxy-groups:
 # Rule provider definition
 rule-providers:
   proxy_domains:
-    type: http
     behavior: classical
+    type: http
     url: "https://raw.githubusercontent.com/ErrOzz/ss_conditions/refs/heads/main/clash_proxy_rules.yaml"
-    path: ./proxy_domains.yaml # Lockal rule file name
     interval: 3600 # Update time 1 hour
+    path: ./proxy_domains.yaml # Lockal rule file name
 
 # Rules list
 rules:
