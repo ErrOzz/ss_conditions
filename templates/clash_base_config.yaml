@@ -7,15 +7,7 @@ log-level: info
 
 # Server info for shadowsocks
 proxies:
-  - name: "MySSServer"
-    type: ss
-    server: # IP
-    port: # port
-    cipher: chacha20-ietf-poly1305
-    password: # password
-    # udp: true
-
-  - name: "MyVlessReality" # Your connection name
+  - name: MyVlessReality   # Your connection name
     type: vless            # Protocol type
     server: your_server_ip # Your server IP (NOT domain!)
     port: your_vless_port  # Port configured in 3x-ui for VLESS/Reality
@@ -35,9 +27,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - MySSServer
+      - MyVlessReality
 
-  - name: DEFAULT_POLICY
+  - name: OTHER
     type: select
     proxies:
       - DIRECT
@@ -65,4 +57,4 @@ rules:
 
   # - GEOIP,RU,DIRECT
 
-  - MATCH,DEFAULT_POLICY
+  - MATCH,OTHER

@@ -147,12 +147,12 @@ echo "::group::Generating Clash Rule Provider file..."
     for line in "${filtered_lines[@]}"; do
         # IP CIDR rule
         if [[ $line =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(/.*)?$ ]]; then
-            echo "  - IP-CIDR,$line,PROXY"
+            echo "  - IP-CIDR,$line"
             continue
         else
             # DOMAIN-SUFFIX rule
             clash_line=${line#\*\.}
-            echo "  - DOMAIN-SUFFIX,${clash_line},PROXY"
+            echo "  - DOMAIN-SUFFIX,${clash_line}"
         fi
     done
 } > "$CLASH_RULES_OUTPUT_FILE"
