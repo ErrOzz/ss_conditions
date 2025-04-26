@@ -36,7 +36,7 @@ fi
 
 # --- Read and Filter Rules ---
 echo "::group::Filtering Rules" # Start a collapsible group
-mapfile -t filtered_lines < <(grep -vE '^#|^$' "$RULES_FILE")
+mapfile -t filtered_lines < <(sed 's/#.*$//' "$RULES_FILE" | grep -vE '^\s*$')
 if [[ ${#filtered_lines[@]} -eq 0 ]]; then
     # Use ::warning:: for non-critical issues
     echo "::warning file=$RULES_FILE::Rules file is empty or contains only comments/blank lines."
