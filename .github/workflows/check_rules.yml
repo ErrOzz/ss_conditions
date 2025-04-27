@@ -1,0 +1,57 @@
+name: Check Domain Availability in rules_proxy
+
+on:
+  workflow_dispatch: # For manual trigger
+  schedule:
+    # Start every week on saturday at 03:00 UTC
+    - cron: '0 3 * * 6' # Every Saturday at 03:00 UTC
+
+jobs:
+  check-domains:
+    runs-on: ubuntu-latest
+    # Give permission to push changes to the repository
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        # Important: clone with a token that has write permissions,
+        # so that the subsequent push works without access issues,
+        # especially if the branch is protected. Use PAT or GITHUB_TOKEN (with the necessary permissions).
+        # For simplicity, we'll use the default GITHUB_TOKEN with permissions: contents: write for now.
+        # If there are issues pushing to a protected branch, a PAT might be required. - name: Install dnsutils (contains dig)
+
+      - name: Install dnsutils (contains dig)
+        # Usually already present on ubuntu-latest, but can be added for reliability
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y dnsutils
+
+      - name: Set execute permission for check script
+        run: chmod +x scripts/check_domains.sh
+
+      - name: Run domain availability check
+        id: check # Give an ID to this step to reference its outcome later
+        # Start the script in the right directory
+        run: |
+          cd scripts
+          bash check_domains.sh
+        # Ignore errors to handle them in the next step
+        continue-on-error: true
+
+      - name: Commit and Push changes if any
+        # Start this step only if the previous step failed (exit code 1)
+        if: steps.check.outcome == 'failure' && steps.check.outputs.exit_code == 1
+        run: |
+          echo "Changes detected by check_domains.sh. Committing..."
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action (Domain Check)"
+
+          git add ../rules/rules_proxy
+          git commit -m "Update rules_proxy based on domain availability check [skip ci]"
+          git push
+
+      - name: No changes detected
+        if: steps.check.outcome == 'success' # If the check was successful (exit code 0)
+        run: echo "No changes needed for rules_proxy."
