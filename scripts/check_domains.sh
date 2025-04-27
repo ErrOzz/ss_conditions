@@ -38,9 +38,12 @@ while IFS= read -r line || [[ -n "$line" ]]; do
         # Trying to resolve the domain (A record). +short outputs only the IP address
         # stderr to /dev/null to suppress error messages
         # Check dig exit status and if output contains a dot (likely an IP)
-        if dig +short "$domain_to_check" A @8.8.8.8 &> /dev/null; then # Check A record specifically
-            echo "  Domain ${domain_to_check} is available."
-            # If the line had the "not available" comment, remove it
+        dig_output=$(dig +short "$domain_to_check" A @8.8.8.8 2>/dev/null)
+        # Verify if dig_output is not empty
+        if [[ -n "$dig_output" ]]; then
+            # Output is not empty -> Domain is available
+            # Add IP address to the comment if it exists
+            echo "  Domain ${domain_to_check} is available (Resolved: ${dig_output})."
             if [[ "$original_comment" == *"$COMMENT_TEXT"* ]]; then
                 echo "${clean_line}" >> "$TEMP_RULES_FILE" # Write the clean line without the comment
                 echo "  Removing '${COMMENT_TEXT}' comment."
@@ -49,12 +52,13 @@ while IFS= read -r line || [[ -n "$line" ]]; do
                 echo "$line" >> "$TEMP_RULES_FILE" # Write the original line as is
             fi
         else
-            # Domain is not available
+            # Output is empty -> Domain is NOT available
             echo "  Domain ${domain_to_check} is NOT available."
-            # If the line doesn't already have the "not available" comment, add it
             if [[ "$original_comment" != *"$COMMENT_TEXT"* ]]; then
                 # Append the comment, preserving other potential comments
-                echo "${clean_line} ${COMMENT_TEXT}${original_comment#\#}" >> "$TEMP_RULES_FILE"
+                # Check if # already exists in the original line
+                existing_comment_part="${original_comment#\#}" # Delete the leading #
+                echo "${clean_line} ${COMMENT_TEXT}${existing_comment_part}" >> "$TEMP_RULES_FILE"
                 echo "  Adding '${COMMENT_TEXT}' comment."
                 CHANGED=1
             else
