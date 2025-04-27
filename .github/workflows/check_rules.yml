@@ -40,6 +40,9 @@ jobs:
         # Ignore errors to handle them in the next step
         continue-on-error: true
 
+      - name: Debug Exit Code
+        run: echo "Script exit code was ${{ steps.check.outputs.exit_code }}"
+
       - name: Commit and Push changes if any
         # Start this step only if the previous step failed (exit code 1)
         if: steps.check.outputs.exit_code == 1
@@ -53,5 +56,5 @@ jobs:
           git push
 
       - name: No changes detected
-        if: steps.check.outcome == 'success' # If the check was successful (exit code 0)
+        if: steps.check.outputs.exit_code == 0 # If the check was successful (exit code 0)
         run: echo "No changes needed for rules_proxy."
