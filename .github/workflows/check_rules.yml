@@ -42,7 +42,7 @@ jobs:
 
       - name: Commit and Push changes if any
         # Start this step only if the previous step failed (exit code 1)
-        if: steps.check.outcome == 'failure' && steps.check.outputs.exit_code == 1
+        if: steps.check.outputs.exit_code == 1
         run: |
           echo "Changes detected by check_domains.sh. Committing..."
           git config --local user.email "action@github.com"
