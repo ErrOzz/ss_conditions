@@ -145,13 +145,15 @@ echo "::group::Generating Clash Rule Provider file..."
 {
     echo "payload:"
     for line in "${filtered_lines[@]}"; do
-        # IP CIDR rule
-        if [[ $line =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(/.*)?$ ]]; then
+        # Check if it's a keyword (no dots)
+        if [[ "$line" != *.* ]]; then
+            echo "  - DOMAIN-KEYWORD,$line"
+        # Check if it's an IP CIDR rule
+        elif [[ $line =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(/.*)?$ ]]; then
             echo "  - IP-CIDR,$line"
             continue
-        else
-            # DOMAIN-SUFFIX rule
-            clash_line=${line#\*\.}
+        else # Otherwise, treat as DOMAIN-SUFFIX
+            clash_line=${line#\*\.} # Remove leading *. if present
             echo "  - DOMAIN-SUFFIX,${clash_line}"
         fi
     done
