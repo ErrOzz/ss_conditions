@@ -38,11 +38,10 @@ jobs:
           cd scripts
           bash check_domains.sh
         # Ignore errors to handle them in the next step
-        continue-on-error: true
 
       - name: Commit and Push changes if any
         # Start this step only if the previous step failed (exit code 1)
-        if: steps.check.conclusion == 'failure'
+        if: failure()
         run: |
           echo "Changes detected by check_domains.sh. Committing..."
           git config --local user.email "action@github.com"
@@ -53,5 +52,5 @@ jobs:
           git push
 
       - name: No changes detected
-        if: steps.check.conclusion == 'success' # If the check was successful (exit code 0)
+        if: success() # If the check was successful (exit code 0)
         run: echo "No changes needed for rules_proxy."
