@@ -47,7 +47,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action (Domain Check)"
 
-          git add ../rules/rules_proxy
+          git add ./rules/rules_proxy
           git commit -m "Update rules_proxy based on domain availability check [skip ci]"
           git push
 

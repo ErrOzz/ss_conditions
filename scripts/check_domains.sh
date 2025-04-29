@@ -5,6 +5,8 @@ RULES_FILE="../rules/rules_proxy"
 TEMP_RULES_FILE="${RULES_FILE}.tmp"
 COMMENT_TEXT="# not available"
 CHANGED=0 # Flag to track if any changes were made
+PROCESSED_COUNT=0
+UNAVAILABLE_COUNT=0
 
 echo "Starting domain availability check for ${RULES_FILE}..."
 
@@ -22,7 +24,6 @@ while IFS= read -r line || [[ -n "$line" ]]; do
     fi
 
     # Extract the domain from the line
-    # Remove comments and trailing spaces, keep leading spaces if any
     clean_line=$(echo "$line" | sed -e 's/\s*#.*//' -e 's/\s*$//')
     # Extract the original comment if it exists
     original_comment=$(echo "$line" | grep -oP '#.*$' || true)
@@ -32,27 +33,33 @@ while IFS= read -r line || [[ -n "$line" ]]; do
        [[ ! "$clean_line" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(/.*)?$ ]] && \
        [[ ! "$clean_line" == *\** ]] && \
        [[ "$clean_line" == *.* ]]; then
+
+        ((PROCESSED_COUNT++))
         domain_to_check="$clean_line"
-        echo "Checking domain: ${domain_to_check}..."
+
+        # Update progress counter in place
+        printf "\rProcessed: %d domains..." "$PROCESSED_COUNT"
 
         # Trying to resolve the domain (A record). +short outputs only the IP address
         # stderr to /dev/null to suppress error messages
         # Check dig exit status and if output contains a dot (likely an IP)
         dig_output=$(dig +short "$domain_to_check" A @8.8.8.8 2>/dev/null)
-        # Verify if dig_output is not empty
+
         if [[ -n "$dig_output" ]]; then
-            # Output is not empty -> Domain is available
-            # Add IP address to the comment if it exists
-            echo "  Domain ${domain_to_check} is available (Resolved: ${dig_output})."
+            # Domain is available - only update file if comment needs removing
             if [[ "$original_comment" == *"$COMMENT_TEXT"* ]]; then
                 echo "${clean_line}" >> "$TEMP_RULES_FILE" # Write the clean line without the comment
-                echo "  Removing '${COMMENT_TEXT}' comment."
+                # Optionally print a message about removing the comment if needed for logs
+                # echo -e "\n  Removing '${COMMENT_TEXT}' comment for available domain: ${domain_to_check}."
                 CHANGED=1
             else
                 echo "$line" >> "$TEMP_RULES_FILE" # Write the original line as is
             fi
         else
-            # Output is empty -> Domain is NOT available
+            # Domain is NOT available - print details and update file
+            ((UNAVAILABLE_COUNT++))
+            # Print a newline before the message to avoid overwriting the counter line
+            echo -e "\nChecking domain: ${domain_to_check}..."
             echo "  Domain ${domain_to_check} is NOT available."
             if [[ "$original_comment" != *"$COMMENT_TEXT"* ]]; then
                 # Append the comment, preserving other potential comments
@@ -72,6 +79,12 @@ while IFS= read -r line || [[ -n "$line" ]]; do
 
 done < "$RULES_FILE"
 
+# Print a final newline to clear the counter line
+echo ""
+
+echo "Total domains checked: ${PROCESSED_COUNT}"
+echo "Unavailable domains found: ${UNAVAILABLE_COUNT}"
+
 # --- End Domain Checking Group ---
 echo "::endgroup::"
 
@@ -79,7 +92,7 @@ echo "::endgroup::"
 echo "::group::Finalizing Changes"
 
 # Replace the original rules file with the temporary one if changes were made
-if cmp -s "$RULES_FILE" "$TEMP_RULES_FILE"; then
+if [[ "$CHANGED" -eq 0 ]]; then
     echo "No changes detected in ${RULES_FILE}."
     rm "$TEMP_RULES_FILE" # Remove the temporary file
     echo "::endgroup::" # End group here if no changes
