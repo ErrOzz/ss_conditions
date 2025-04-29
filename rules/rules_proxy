@@ -1,5 +1,4 @@
 *.ua
-12esdcsdlve.com # not available
 10minutemail.com
 10minutemail.net
 15min.lt
@@ -8,7 +7,6 @@
 3dyuriki.com
 444.hu
 4freerussia.org
-4pda.ru # not available
 9tv.co.il
 acf.international
 activatica.org
@@ -16,8 +14,6 @@ ad.nl
 adguard.com
 adguard-vpn.com
 adobe.com
-afp.com # not available
-afpforum.com # not available
 agenceurope.eu
 agents.media
 agentura.ru
@@ -35,7 +31,6 @@ archiveofourown.org
 arte.tv
 aussiedlerbote.de
 azathabar.com
-azattyq.com # not available
 b1tv.ro
 backmarket.com
 barentsobserver.co
@@ -55,7 +50,6 @@ blackseanews.net
 buymeacoffee.com
 canva.com
 carousell.sg
-cdninstagram.com # not available
 censortracker.org
 centre-t.com
 ceskatelevize.cz
@@ -129,7 +123,6 @@ dw.com
 dyatel.io
 ebookpdf.com
 echofm.online
-echokavkaza.com # not available
 efe.com
 ej.ru
 elmundo.es
@@ -203,13 +196,15 @@ holod.media
 hostinger.com
 hs.fi
 idelreal.org
-ikianime.tv # not available
 iltalehti.fi
 in-fact.org
 independent.com.mt
 independent.ie
 information.dk
+# for instagram
+cdninstagram.com # not available
 instagram.com
+# end for instagram
 intel.com
 irishtimes.com
 is.fi
@@ -293,7 +288,6 @@ newsru.com
 newtimes.ru
 nhentai.net
 nhentai.to
-nnm-club.me # not available
 nnmclub.to
 nos.nl
 notion.so
@@ -319,14 +313,12 @@ oe24.at
 oi.legal
 onelogin.com
 openai.com
-openai.org # not available
 openmedia.io
 openwrt.org
 opposition-news.com
 orf.at
 osti.gov
 otkrito.lv
-ovd.cards # not available
 ovd.info
 ovd.news
 ovdinfo.legal
@@ -390,7 +382,6 @@ rucriminal.info
 rule34.xxx
 rutor.info
 rutor.is
-rutracker.cc # not available
 rutracker.net
 rutracker.nl
 rutracker.org
@@ -432,7 +423,6 @@ svt.se
 svtv.org
 syg.ma
 t.co
-t-ru.org # not available
 tayga.info
 te-st.org
 telegraf.by
@@ -470,8 +460,6 @@ uquiz.com
 usa.one
 verstka.media
 verpex.com
-vesma.today # not available
-vesma.one # not available
 vesty.co.il
 vice.com
 voanews.com
