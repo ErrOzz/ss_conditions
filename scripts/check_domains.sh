@@ -4,36 +4,82 @@ set -eo pipefail
 RULES_FILE="../rules/rules_proxy"
 TEMP_RULES_FILE="${RULES_FILE}.tmp"
 COMMENT_TEXT="# not available"
-CHANGED=0 # Flag to track if any changes were made
+CHANGED=0
 PROCESSED_COUNT=0
 UNAVAILABLE_COUNT=0
-DOTS_COUNT=0 # Счетчик точек на строке
-DOTS_PER_LINE=60 # Сколько точек выводить на одной строке
+DOTS_COUNT=0
+DOTS_PER_LINE=60
 
-echo "Starting domain availability check for ${RULES_FILE}..."
+echo "Starting domain availability check..."
+echo "[DEBUG] Current directory: $(pwd)"
+echo "[DEBUG] Checking source file: ${RULES_FILE}"
 
-> "$TEMP_RULES_FILE" # Create or clear the temporary rules file
+# 1. Проверяем существование и права на чтение исходного файла
+if [[ ! -f "$RULES_FILE" ]]; then
+    echo "::error::Source file '${RULES_FILE}' not found or is not a regular file!"
+    ls -l "$(dirname "$RULES_FILE")" # Посмотрим содержимое директории
+    exit 10 # Выход с уникальным кодом
+elif [[ ! -r "$RULES_FILE" ]]; then
+    echo "::error::Source file '${RULES_FILE}' is not readable!"
+    ls -l "$RULES_FILE" # Посмотрим права файла
+    exit 11 # Выход с уникальным кодом
+else
+    echo "[DEBUG] Source file '${RULES_FILE}' exists and is readable."
+fi
+
+echo "[DEBUG] Checking target directory for temp file: $(dirname "$TEMP_RULES_FILE")"
+# 2. Проверяем права на запись в директорию для временного файла
+TARGET_DIR=$(dirname "$TEMP_RULES_FILE")
+if [[ ! -d "$TARGET_DIR" ]]; then
+     echo "::error::Target directory '${TARGET_DIR}' for temp file does not exist!"
+     ls -l "$(dirname "$TARGET_DIR")" # Посмотрим родительскую директорию
+     exit 12
+elif [[ ! -w "$TARGET_DIR" ]]; then
+    echo "::error::Target directory '${TARGET_DIR}' for temp file is not writable!"
+    ls -ld "$TARGET_DIR" # Посмотрим права самой директории
+    exit 13 # Выход с уникальным кодом
+else
+    echo "[DEBUG] Target directory '${TARGET_DIR}' exists and is writable."
+fi
+
+echo "[DEBUG] Attempting to create/clear temp file: ${TEMP_RULES_FILE}"
+# 3. Пытаемся создать временный файл (используем set +e временно для проверки)
+set +e
+> "$TEMP_RULES_FILE"
+EXIT_CODE_TMP=$?
+set -e # Возвращаем строгий режим
+if [[ $EXIT_CODE_TMP -ne 0 ]]; then
+     echo "::error::Failed to create/clear temp file '${TEMP_RULES_FILE}'. Exit code: ${EXIT_CODE_TMP}"
+     ls -l "$TARGET_DIR" # Посмотрим содержимое директории
+     exit 14
+else
+     echo "[DEBUG] Temp file '${TEMP_RULES_FILE}' created/cleared successfully."
+fi
 
 # --- Start Domain Checking Group ---
 echo "::group::Checking Domains in ${RULES_FILE}"
-
-# Выводим начальное сообщение для точек
-echo -n "Processing domains: " # -n не добавляет перевод строки
+echo -n "Processing domains: "
 
 # Read the rules file line by line
+# Добавим отладку перед циклом
+echo "[DEBUG] Starting 'while read' loop..."
 while IFS= read -r line || [[ -n "$line" ]]; do
+    # И сразу внутри цикла для первой итерации
+    echo "[DEBUG] Read line: '$line'"
+
     # Skip empty lines and comments
     if [[ -z "$line" || "$line" =~ ^\s*# ]]; then
         echo "$line" >> "$TEMP_RULES_FILE"
         continue
     fi
 
+    # ... (остальная часть вашего цикла как в предыдущем варианте с точками) ...
     # Extract the domain from the line
     clean_line=$(echo "$line" | sed -e 's/\s*#.*//' -e 's/\s*$//')
     # Extract the original comment if it exists
     original_comment=$(echo "$line" | grep -oP '#.*$' || true)
 
-    # Check if the line is a candidate for checking (not empty, not IP, not wildcard, contains dot)
+    # Check if the line is a candidate for checking
     if [[ -n "$clean_line" ]] && \
        [[ ! "$clean_line" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(/.*)?$ ]] && \
        [[ ! "$clean_line" == *\** ]] && \
@@ -47,59 +93,45 @@ while IFS= read -r line || [[ -n "$line" ]]; do
 
         if [[ -n "$dig_output" ]]; then
             # Domain is available
-            # Print a dot for progress, without newline
             echo -n "."
             ((DOTS_COUNT++))
-            # Check if we need to wrap the line of dots
             if [[ "$DOTS_COUNT" -ge "$DOTS_PER_LINE" ]]; then
-                echo "" # New line
-                echo -n "Processing domains: " # Start new line of dots
+                echo ""
+                echo -n "Processing domains: "
                 DOTS_COUNT=0
             fi
 
-            # Only update file if comment needs removing
             if [[ "$original_comment" == *"$COMMENT_TEXT"* ]]; then
                 echo "${clean_line}" >> "$TEMP_RULES_FILE"
-                # Optionally log removal (uncomment if needed)
-                # echo -e "\n  [INFO] Removing '${COMMENT_TEXT}' for available domain: ${domain_to_check}."
                 CHANGED=1
             else
-                echo "$line" >> "$TEMP_RULES_FILE" # Write the original line as is
+                echo "$line" >> "$TEMP_RULES_FILE"
             fi
         else
             # Domain is NOT available
             ((UNAVAILABLE_COUNT++))
-            # Ensure we start on a new line before printing error message
-            # If the last output was a dot (no newline), print a newline first
             if [[ "$DOTS_COUNT" -gt 0 ]]; then
-                 echo "" # Print newline to clear the dot line
-                 DOTS_COUNT=0 # Reset dot counter for the next line
+                 echo ""
+                 DOTS_COUNT=0
             fi
-            # Print the unavailable domain info
             echo "[WARN] Domain ${domain_to_check} is NOT available."
 
-            # Only update file if comment needs adding
             if [[ "$original_comment" != *"$COMMENT_TEXT"* ]]; then
-                # Append the comment, preserving other potential comments
-                # Check if # already exists in the original line
-                existing_comment_part="${original_comment#\#}" # Delete the leading #
+                existing_comment_part="${original_comment#\#}"
                 echo "${clean_line} ${COMMENT_TEXT}${existing_comment_part}" >> "$TEMP_RULES_FILE"
                 echo "  [INFO] Adding '${COMMENT_TEXT}' comment for: ${domain_to_check}"
                 CHANGED=1
             else
-                echo "$line" >> "$TEMP_RULES_FILE" # Comment already exists
+                echo "$line" >> "$TEMP_RULES_FILE"
             fi
-             # Start new line for dots after printing unavailable domain info
             echo -n "Processing domains: "
         fi
     else
-        # If the line is not a domain to check, write it as is
         echo "$line" >> "$TEMP_RULES_FILE"
     fi
-
 done < "$RULES_FILE"
 
-# Print a final newline if the last output was dots
+
 if [[ "$DOTS_COUNT" -gt 0 ]]; then
     echo ""
 fi
@@ -107,22 +139,42 @@ fi
 echo "Total domains checked: ${PROCESSED_COUNT}"
 echo "Unavailable domains found: ${UNAVAILABLE_COUNT}"
 
-# --- End Domain Checking Group ---
 echo "::endgroup::"
 
 # --- Start Finalizing Group ---
 echo "::group::Finalizing Changes"
 
-# Replace the original rules file with the temporary one if changes were made
 if [[ "$CHANGED" -eq 0 ]]; then
     echo "No changes detected in ${RULES_FILE}."
-    rm "$TEMP_RULES_FILE" # Remove the temporary file
-    echo "::endgroup::" # End group here if no changes
+    rm "$TEMP_RULES_FILE"
+    echo "::endgroup::"
     exit 0
 else
     echo "Changes detected in ${RULES_FILE}. Updating..."
-    mv "$TEMP_RULES_FILE" "$RULES_FILE" # Replace the original file with the updated one
-    echo "::notice file=${RULES_FILE}::${RULES_FILE} updated."
-    echo "::endgroup::" # End group here after changes
-    exit 1 # Exit with 1 to indicate changes were made (useful for CI)
+    # Добавим отладку перед сравнением/перемещением
+    echo "[DEBUG] Comparing final files before move/exit..."
+    echo "--- BEGIN Original ($RULES_FILE) ---"
+    cat "$RULES_FILE"
+    echo "--- END Original ($RULES_FILE) ---"
+    echo "--- BEGIN Temporary ($TEMP_RULES_FILE) ---"
+    cat "$TEMP_RULES_FILE"
+    echo "--- END Temporary ($TEMP_RULES_FILE) ---"
+
+    # Проверка еще раз, если вдруг файлы оказались идентичны из-за ошибки логики
+    set +e
+    cmp -s "$RULES_FILE" "$TEMP_RULES_FILE"
+    CMP_RESULT=$?
+    set -e
+    if [[ "$CMP_RESULT" -eq 0 ]]; then
+         echo "::warning::DEBUG: Flag CHANGED=1 but cmp reports files are identical! Check logic. Exiting 0."
+         rm "$TEMP_RULES_FILE"
+         echo "::endgroup::"
+         exit 0
+    else
+         echo "[DEBUG] cmp reports files differ. Proceeding with mv and exit 1."
+         mv "$TEMP_RULES_FILE" "$RULES_FILE"
+         echo "::notice file=${RULES_FILE}::${RULES_FILE} updated."
+         echo "::endgroup::"
+         exit 1
+    fi
 fi
