@@ -8,7 +8,6 @@ payload:
   - DOMAIN-SUFFIX,3dyuriki.com
   - DOMAIN-SUFFIX,444.hu
   - DOMAIN-SUFFIX,4freerussia.org
-  - DOMAIN-SUFFIX,4pda.ru
   - DOMAIN-SUFFIX,9tv.co.il
   - DOMAIN-SUFFIX,acf.international
   - DOMAIN-SUFFIX,activatica.org
@@ -16,8 +15,6 @@ payload:
   - DOMAIN-SUFFIX,adguard.com
   - DOMAIN-SUFFIX,adguard-vpn.com
   - DOMAIN-SUFFIX,adobe.com
-  - DOMAIN-SUFFIX,afp.com
-  - DOMAIN-SUFFIX,afpforum.com
   - DOMAIN-SUFFIX,agenceurope.eu
   - DOMAIN-SUFFIX,agents.media
   - DOMAIN-SUFFIX,agentura.ru
@@ -35,7 +32,6 @@ payload:
   - DOMAIN-SUFFIX,arte.tv
   - DOMAIN-SUFFIX,aussiedlerbote.de
   - DOMAIN-SUFFIX,azathabar.com
-  - DOMAIN-SUFFIX,azattyq.com
   - DOMAIN-SUFFIX,b1tv.ro
   - DOMAIN-SUFFIX,backmarket.com
   - DOMAIN-SUFFIX,barentsobserver.co
@@ -55,7 +51,6 @@ payload:
   - DOMAIN-SUFFIX,buymeacoffee.com
   - DOMAIN-SUFFIX,canva.com
   - DOMAIN-SUFFIX,carousell.sg
-  - DOMAIN-SUFFIX,cdninstagram.com
   - DOMAIN-SUFFIX,censortracker.org
   - DOMAIN-SUFFIX,centre-t.com
   - DOMAIN-SUFFIX,ceskatelevize.cz
@@ -88,7 +83,7 @@ payload:
   - DOMAIN-SUFFIX,delfi.lt
   - DOMAIN-SUFFIX,delfi.lv
   - DOMAIN-SUFFIX,dell.com
-  - DOMAIN-SUFFIX,dellcdn.com
+  - DOMAIN-SUFFIX,dellcdn.com 
   - DOMAIN-SUFFIX,demokracija.eu
   - DOMAIN-SUFFIX,demokracija.si
   - DOMAIN-SUFFIX,dennikn.sk
@@ -106,13 +101,13 @@ payload:
   - DOMAIN-SUFFIX,discord.media
   - DOMAIN-SUFFIX,discord.new
   - DOMAIN-SUFFIX,discord.store
-  - DOMAIN-SUFFIX,discord.tools
+  - DOMAIN-SUFFIX,discord.tools 
   - DOMAIN-SUFFIX,discordapp.com
-  - DOMAIN-SUFFIX,discordapp.net
+  - DOMAIN-SUFFIX,discordapp.net 
   - DOMAIN-SUFFIX,discordcdn.com
   - DOMAIN-SUFFIX,discordmerch.com
-  - DOMAIN-SUFFIX,discordpartygames.com
-  - DOMAIN-SUFFIX,discord-activities.com
+  - DOMAIN-SUFFIX,discordpartygames.com 
+  - DOMAIN-SUFFIX,discord-activities.com 
   - DOMAIN-SUFFIX,discordactivities.com
   - DOMAIN-SUFFIX,discordsays.com
   - DOMAIN-SUFFIX,discours.io
@@ -127,7 +122,6 @@ payload:
   - DOMAIN-SUFFIX,dyatel.io
   - DOMAIN-SUFFIX,ebookpdf.com
   - DOMAIN-SUFFIX,echofm.online
-  - DOMAIN-SUFFIX,echokavkaza.com
   - DOMAIN-SUFFIX,efe.com
   - DOMAIN-SUFFIX,ej.ru
   - DOMAIN-SUFFIX,elmundo.es
@@ -167,7 +161,7 @@ payload:
   - DOMAIN-SUFFIX,yt3.ggpht.com
   - DOMAIN-SUFFIX,github.com
   - DOMAIN-SUFFIX,githubcopilot.com
-  - DOMAIN-SUFFIX,githubusercontent.com
+  - DOMAIN-SUFFIX,githubusercontent.com 
   - DOMAIN-SUFFIX,godaddy.com
   - DOMAIN-SUFFIX,accounts.google.com
   - DOMAIN-SUFFIX,apis.google.com
@@ -197,12 +191,12 @@ payload:
   - DOMAIN-SUFFIX,hostinger.com
   - DOMAIN-SUFFIX,hs.fi
   - DOMAIN-SUFFIX,idelreal.org
-  - DOMAIN-SUFFIX,ikianime.tv
   - DOMAIN-SUFFIX,iltalehti.fi
   - DOMAIN-SUFFIX,in-fact.org
   - DOMAIN-SUFFIX,independent.com.mt
   - DOMAIN-SUFFIX,independent.ie
   - DOMAIN-SUFFIX,information.dk
+  - DOMAIN-SUFFIX,cdninstagram.com 
   - DOMAIN-SUFFIX,instagram.com
   - DOMAIN-SUFFIX,intel.com
   - DOMAIN-SUFFIX,irishtimes.com
@@ -225,7 +219,7 @@ payload:
   - DOMAIN-SUFFIX,konachan.com
   - DOMAIN-SUFFIX,korrespondent.net
   - DOMAIN-SUFFIX,krymr.com
-  - DOMAIN-SUFFIX,kym-cdn.com
+  - DOMAIN-SUFFIX,kym-cdn.com 
   - DOMAIN-SUFFIX,la-croix.com
   - DOMAIN-SUFFIX,la7.it
   - DOMAIN-SUFFIX,lastampa.it
@@ -287,7 +281,6 @@ payload:
   - DOMAIN-SUFFIX,newtimes.ru
   - DOMAIN-SUFFIX,nhentai.net
   - DOMAIN-SUFFIX,nhentai.to
-  - DOMAIN-SUFFIX,nnm-club.me
   - DOMAIN-SUFFIX,nnmclub.to
   - DOMAIN-SUFFIX,nos.nl
   - DOMAIN-SUFFIX,notion.so
@@ -305,7 +298,7 @@ payload:
   - DOMAIN-SUFFIX,nxp.com
   - DOMAIN-SUFFIX,nyaa.si
   - DOMAIN-SUFFIX,oaistatic.com
-  - DOMAIN-SUFFIX,oaiusercontent.com
+  - DOMAIN-SUFFIX,oaiusercontent.com 
   - DOMAIN-SUFFIX,observador.pt
   - DOMAIN-SUFFIX,oculus.com
   - DOMAIN-SUFFIX,odessa.online
@@ -313,14 +306,12 @@ payload:
   - DOMAIN-SUFFIX,oi.legal
   - DOMAIN-SUFFIX,onelogin.com
   - DOMAIN-SUFFIX,openai.com
-  - DOMAIN-SUFFIX,openai.org
   - DOMAIN-SUFFIX,openmedia.io
   - DOMAIN-SUFFIX,openwrt.org
   - DOMAIN-SUFFIX,opposition-news.com
   - DOMAIN-SUFFIX,orf.at
   - DOMAIN-SUFFIX,osti.gov
   - DOMAIN-SUFFIX,otkrito.lv
-  - DOMAIN-SUFFIX,ovd.cards
   - DOMAIN-SUFFIX,ovd.info
   - DOMAIN-SUFFIX,ovd.news
   - DOMAIN-SUFFIX,ovdinfo.legal
@@ -384,7 +375,6 @@ payload:
   - DOMAIN-SUFFIX,rule34.xxx
   - DOMAIN-SUFFIX,rutor.info
   - DOMAIN-SUFFIX,rutor.is
-  - DOMAIN-SUFFIX,rutracker.cc
   - DOMAIN-SUFFIX,rutracker.net
   - DOMAIN-SUFFIX,rutracker.nl
   - DOMAIN-SUFFIX,rutracker.org
@@ -397,7 +387,6 @@ payload:
   - DOMAIN-SUFFIX,severreal.org
   - DOMAIN-SUFFIX,seznamzpravy.cz
   - DOMAIN-SUFFIX,shadowsocks.org
-  - DOMAIN-SUFFIX,shikimori.me
   - DOMAIN-SUFFIX,sibreal.org
   - DOMAIN-SUFFIX,skai.gr
   - DOMAIN-SUFFIX,skat.media
@@ -427,7 +416,6 @@ payload:
   - DOMAIN-SUFFIX,svtv.org
   - DOMAIN-SUFFIX,syg.ma
   - DOMAIN-SUFFIX,t.co
-  - DOMAIN-SUFFIX,t-ru.org
   - DOMAIN-SUFFIX,tayga.info
   - DOMAIN-SUFFIX,te-st.org
   - DOMAIN-SUFFIX,telegraf.by
@@ -456,7 +444,7 @@ payload:
   - DOMAIN-SUFFIX,tvnet.lv
   - DOMAIN-SUFFIX,tvrain.ru
   - DOMAIN-SUFFIX,tvrain.tv
-  - DOMAIN-SUFFIX,twimg.com
+  - DOMAIN-SUFFIX,twimg.com 
   - DOMAIN-SUFFIX,twitter.com
   - DOMAIN-SUFFIX,unian.info
   - DOMAIN-SUFFIX,unian.net
@@ -465,8 +453,6 @@ payload:
   - DOMAIN-SUFFIX,usa.one
   - DOMAIN-SUFFIX,verstka.media
   - DOMAIN-SUFFIX,verpex.com
-  - DOMAIN-SUFFIX,vesma.today
-  - DOMAIN-SUFFIX,vesma.one
   - DOMAIN-SUFFIX,vesty.co.il
   - DOMAIN-SUFFIX,vice.com
   - DOMAIN-SUFFIX,voanews.com
@@ -488,7 +474,7 @@ payload:
   - DOMAIN-SUFFIX,yaoilib.me
   - DOMAIN-SUFFIX,yle.fi
   - DOMAIN-SUFFIX,youtube.com
-  - DOMAIN-SUFFIX,ytimg.com
+  - DOMAIN-SUFFIX,ytimg.com 
   - DOMAIN-SUFFIX,yummyanime.org
   - DOMAIN-SUFFIX,zahav.ru
   - DOMAIN-SUFFIX,zaodno.org

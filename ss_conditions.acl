@@ -10,7 +10,6 @@
 (?:^|\.)3dyuriki\.com$
 (?:^|\.)444\.hu$
 (?:^|\.)4freerussia\.org$
-(?:^|\.)4pda\.ru$
 ^9tv\.co\.il$
 (?:^|\.)acf\.international$
 (?:^|\.)activatica\.org$
@@ -18,8 +17,6 @@
 (?:^|\.)adguard\.com$
 (?:^|\.)adguard-vpn\.com$
 (?:^|\.)adobe\.com$
-(?:^|\.)afp\.com$
-(?:^|\.)afpforum\.com$
 (?:^|\.)agenceurope\.eu$
 (?:^|\.)agents\.media$
 (?:^|\.)agentura\.ru$
@@ -37,7 +34,6 @@
 (?:^|\.)arte\.tv$
 (?:^|\.)aussiedlerbote\.de$
 (?:^|\.)azathabar\.com$
-(?:^|\.)azattyq\.com$
 (?:^|\.)b1tv\.ro$
 (?:^|\.)backmarket\.com$
 (?:^|\.)barentsobserver\.co$
@@ -57,7 +53,6 @@
 (?:^|\.)buymeacoffee\.com$
 (?:^|\.)canva\.com$
 (?:^|\.)carousell\.sg$
-(?:^|\.)cdninstagram\.com$
 (?:^|\.)censortracker\.org$
 (?:^|\.)centre-t\.com$
 (?:^|\.)ceskatelevize\.cz$
@@ -90,7 +85,7 @@
 (?:^|\.)delfi\.lt$
 (?:^|\.)delfi\.lv$
 (?:^|\.)dell\.com$
-(?:^|\.)dellcdn\.com$
+(?:^|\.)dellcdn\.com $
 (?:^|\.)demokracija\.eu$
 (?:^|\.)demokracija\.si$
 (?:^|\.)dennikn\.sk$
@@ -108,13 +103,13 @@
 (?:^|\.)discord\.media$
 (?:^|\.)discord\.new$
 (?:^|\.)discord\.store$
-(?:^|\.)discord\.tools$
+(?:^|\.)discord\.tools $
 (?:^|\.)discordapp\.com$
-(?:^|\.)discordapp\.net$
+(?:^|\.)discordapp\.net $
 (?:^|\.)discordcdn\.com$
 (?:^|\.)discordmerch\.com$
-(?:^|\.)discordpartygames\.com$
-(?:^|\.)discord-activities\.com$
+(?:^|\.)discordpartygames\.com $
+(?:^|\.)discord-activities\.com $
 (?:^|\.)discordactivities\.com$
 (?:^|\.)discordsays\.com$
 (?:^|\.)discours\.io$
@@ -129,7 +124,6 @@
 (?:^|\.)dyatel\.io$
 (?:^|\.)ebookpdf\.com$
 (?:^|\.)echofm\.online$
-(?:^|\.)echokavkaza\.com$
 (?:^|\.)efe\.com$
 (?:^|\.)ej\.ru$
 (?:^|\.)elmundo\.es$
@@ -169,7 +163,7 @@
 ^yt3\.ggpht\.com$
 (?:^|\.)github\.com$
 (?:^|\.)githubcopilot\.com$
-(?:^|\.)githubusercontent\.com$
+(?:^|\.)githubusercontent\.com $
 (?:^|\.)godaddy\.com$
 ^accounts\.google\.com$
 ^apis\.google\.com$
@@ -199,12 +193,12 @@
 (?:^|\.)hostinger\.com$
 (?:^|\.)hs\.fi$
 (?:^|\.)idelreal\.org$
-(?:^|\.)ikianime\.tv$
 (?:^|\.)iltalehti\.fi$
 (?:^|\.)in-fact\.org$
 ^independent\.com\.mt$
 (?:^|\.)independent\.ie$
 (?:^|\.)information\.dk$
+(?:^|\.)cdninstagram\.com $
 (?:^|\.)instagram\.com$
 (?:^|\.)intel\.com$
 (?:^|\.)irishtimes\.com$
@@ -227,7 +221,7 @@
 (?:^|\.)konachan\.com$
 (?:^|\.)korrespondent\.net$
 (?:^|\.)krymr\.com$
-(?:^|\.)kym-cdn\.com$
+(?:^|\.)kym-cdn\.com $
 (?:^|\.)la-croix\.com$
 (?:^|\.)la7\.it$
 (?:^|\.)lastampa\.it$
@@ -289,7 +283,6 @@
 (?:^|\.)newtimes\.ru$
 (?:^|\.)nhentai\.net$
 (?:^|\.)nhentai\.to$
-(?:^|\.)nnm-club\.me$
 (?:^|\.)nnmclub\.to$
 (?:^|\.)nos\.nl$
 (?:^|\.)notion\.so$
@@ -307,7 +300,7 @@
 (?:^|\.)nxp\.com$
 (?:^|\.)nyaa\.si$
 (?:^|\.)oaistatic\.com$
-(?:^|\.)oaiusercontent\.com$
+(?:^|\.)oaiusercontent\.com $
 (?:^|\.)observador\.pt$
 (?:^|\.)oculus\.com$
 (?:^|\.)odessa\.online$
@@ -315,14 +308,12 @@
 (?:^|\.)oi\.legal$
 (?:^|\.)onelogin\.com$
 (?:^|\.)openai\.com$
-(?:^|\.)openai\.org$
 (?:^|\.)openmedia\.io$
 (?:^|\.)openwrt\.org$
 (?:^|\.)opposition-news\.com$
 (?:^|\.)orf\.at$
 (?:^|\.)osti\.gov$
 (?:^|\.)otkrito\.lv$
-(?:^|\.)ovd\.cards$
 (?:^|\.)ovd\.info$
 (?:^|\.)ovd\.news$
 (?:^|\.)ovdinfo\.legal$
@@ -386,7 +377,6 @@
 (?:^|\.)rule34\.xxx$
 (?:^|\.)rutor\.info$
 (?:^|\.)rutor\.is$
-(?:^|\.)rutracker\.cc$
 (?:^|\.)rutracker\.net$
 (?:^|\.)rutracker\.nl$
 (?:^|\.)rutracker\.org$
@@ -399,7 +389,6 @@
 (?:^|\.)severreal\.org$
 (?:^|\.)seznamzpravy\.cz$
 (?:^|\.)shadowsocks\.org$
-(?:^|\.)shikimori\.me$
 (?:^|\.)sibreal\.org$
 (?:^|\.)skai\.gr$
 (?:^|\.)skat\.media$
@@ -429,7 +418,6 @@
 (?:^|\.)svtv\.org$
 (?:^|\.)syg\.ma$
 (?:^|\.)t\.co$
-(?:^|\.)t-ru\.org$
 (?:^|\.)tayga\.info$
 (?:^|\.)te-st\.org$
 (?:^|\.)telegraf\.by$
@@ -458,7 +446,7 @@
 (?:^|\.)tvnet\.lv$
 (?:^|\.)tvrain\.ru$
 (?:^|\.)tvrain\.tv$
-(?:^|\.)twimg\.com$
+(?:^|\.)twimg\.com $
 (?:^|\.)twitter\.com$
 (?:^|\.)unian\.info$
 (?:^|\.)unian\.net$
@@ -467,8 +455,6 @@
 (?:^|\.)usa\.one$
 (?:^|\.)verstka\.media$
 (?:^|\.)verpex\.com$
-(?:^|\.)vesma\.today$
-(?:^|\.)vesma\.one$
 ^vesty\.co\.il$
 (?:^|\.)vice\.com$
 (?:^|\.)voanews\.com$
@@ -490,7 +476,7 @@
 (?:^|\.)yaoilib\.me$
 (?:^|\.)yle\.fi$
 (?:^|\.)youtube\.com$
-(?:^|\.)ytimg\.com$
+(?:^|\.)ytimg\.com $
 (?:^|\.)yummyanime\.org$
 (?:^|\.)zahav\.ru$
 (?:^|\.)zaodno\.org$
