@@ -43,48 +43,29 @@ while IFS= read -r line || [[ -n "$line" ]]; do
             cname_record_output=$(dig +short "$domain_to_check" CNAME @8.8.8.8 2>/dev/null)
         fi
 
-        # 3. Consider domain "available" for the list if EITHER A or CNAME record exists
+        # 3. Consider domain "available" if EITHER A or CNAME record exists
         if [[ -n "$a_record_output" || -n "$cname_record_output" ]]; then
-            # Domain is considered available (either direct IP or CNAME exists)
-            # Print a dot for progress
-            echo -n "."
-            ((DOTS_COUNT++))
-            if [[ "$DOTS_COUNT" -ge "$DOTS_PER_LINE" ]]; then
-                echo ""
-                echo -n "Processing domains: "
-                DOTS_COUNT=0
-            fi
+            # Domain is considered available
+            # Logging for available domains is skipped for brevity
+            # echo "  Domain ${domain_to_check} is available (A/CNAME found)."
 
-            # File modification logic: Only change if the "not available" comment needs removing
+            # File modification logic: Remove comment if needed
             if [[ "$original_comment" == *"$COMMENT_TEXT"* ]]; then
-                echo "${clean_line}" >> "$TEMP_RULES_FILE"
-                # Log removal if needed
-                # echo -e "\n  [INFO] Removing '${COMMENT_TEXT}' for available domain (A/CNAME found): ${domain_to_check}."
-                CHANGED=1
+                echo "${clean_line}" >> "$TEMP_RULES_FILE" # Write without comment
             else
-                echo "$line" >> "$TEMP_RULES_FILE" # Write the original line as is
+                echo "$line" >> "$TEMP_RULES_FILE" # Write original line
             fi
         else
             # Domain is NOT available (neither A nor CNAME found)
-            ((UNAVAILABLE_COUNT++))
-            if [[ "$DOTS_COUNT" -gt 0 ]]; then
-                 echo ""
-                 DOTS_COUNT=0
-                 echo -n "Processing domains: "
-            fi
-            echo "[WARN] Domain ${domain_to_check} is NOT available (No A or CNAME)."
+            # Keep log for unavailable domains
+            echo "[WARN] Domain ${domain_to_check} is NOT available (No A or CNAME)." # Updated message
 
-            # File modification logic: Only change if the "not available" comment needs adding
+            # File modification logic: Add comment if needed
             if [[ "$original_comment" != *"$COMMENT_TEXT"* ]]; then
-                # Append the comment, preserving other potential comments
-                # Check if # already exists in the original line
-                existing_comment_part="${original_comment#\#}" # Delete the leading #
-                echo "${clean_line} ${COMMENT_TEXT}${existing_comment_part}" >> "$TEMP_RULES_FILE"
-                # Log addition if needed
-                # echo "  [INFO] Adding '${COMMENT_TEXT}' comment for: ${domain_to_check}"
-                CHANGED=1
+                existing_comment_part="${original_comment#\#}" # Get original comment text after #
+                echo "${clean_line} ${COMMENT_TEXT}${existing_comment_part}" >> "$TEMP_RULES_FILE" # Add comment
             else
-                echo "$line" >> "$TEMP_RULES_FILE" # Write the original line as is
+                echo "$line" >> "$TEMP_RULES_FILE" # Comment already exists, write original
             fi
         fi
     else
