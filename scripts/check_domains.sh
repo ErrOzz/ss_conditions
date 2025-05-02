@@ -33,7 +33,7 @@ while IFS= read -r line || [[ -n "$line" ]]; do
        [[ ! "$clean_line" == *\** ]] && \
        [[ "$clean_line" == *.* ]]; then
         domain_to_check="$clean_line"
-        echo "Checking domain: ${domain_to_check}..."
+        # echo "Checking domain: ${domain_to_check}..."
 
         # Trying to resolve the domain (A record). +short outputs only the IP address
         # stderr to /dev/null to suppress error messages
@@ -43,10 +43,10 @@ while IFS= read -r line || [[ -n "$line" ]]; do
         if [[ -n "$dig_output" ]]; then
             # Output is not empty -> Domain is available
             # Add IP address to the comment if it exists
-            echo "  Domain ${domain_to_check} is available (Resolved: ${dig_output})."
+            # echo "  Domain ${domain_to_check} is available (Resolved: ${dig_output})."
             if [[ "$original_comment" == *"$COMMENT_TEXT"* ]]; then
                 echo "${clean_line}" >> "$TEMP_RULES_FILE" # Write the clean line without the comment
-                echo "  Removing '${COMMENT_TEXT}' comment."
+                # echo "  Removing '${COMMENT_TEXT}' comment."
                 CHANGED=1
             else
                 echo "$line" >> "$TEMP_RULES_FILE" # Write the original line as is
@@ -59,7 +59,7 @@ while IFS= read -r line || [[ -n "$line" ]]; do
                 # Check if # already exists in the original line
                 existing_comment_part="${original_comment#\#}" # Delete the leading #
                 echo "${clean_line} ${COMMENT_TEXT}${existing_comment_part}" >> "$TEMP_RULES_FILE"
-                echo "  Adding '${COMMENT_TEXT}' comment."
+                # echo "  Adding '${COMMENT_TEXT}' comment."
                 CHANGED=1
             else
                 echo "$line" >> "$TEMP_RULES_FILE" # Write the original line as is
@@ -85,9 +85,19 @@ if cmp -s "$RULES_FILE" "$TEMP_RULES_FILE"; then
     echo "::endgroup::" # End group here if no changes
     exit 0
 else
+    # Check the flag CHANGED as a secondary check
+    # If the files differ but CHANGED is not set, it indicates a logic error
+    if [[ "$CHANGED" -eq 1 ]]; then
     echo "Changes detected in ${RULES_FILE}. Updating..."
     mv "$TEMP_RULES_FILE" "$RULES_FILE" # Replace the original file with the updated one
     echo "::notice file=${RULES_FILE}::${RULES_FILE} updated."
-    echo "::endgroup::" # End group here after changes
-    exit 1 # Exit with 1 to indicate changes were made (useful for CI)
+        echo "::endgroup::"
+        exit 1
+    else
+        # Logic error: files differ but CHANGED flag is 0
+        echo "::warning:: Files differ according to cmp, but CHANGED flag is 0. Check script logic. NOT updating."
+        rm "$TEMP_RULES_FILE" # Just remove the temporary file
+        echo "::endgroup::"
+        exit 0
+    fi
 fi
