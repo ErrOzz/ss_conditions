@@ -4,7 +4,6 @@ set -eo pipefail
 RULES_FILE="../rules/rules_proxy"
 TEMP_RULES_FILE="${RULES_FILE}.tmp"
 COMMENT_TEXT="# not available"
-CHANGED=0 # Flag to track if any changes were made
 
 echo "Starting domain availability check for ${RULES_FILE}..."
 
@@ -81,23 +80,18 @@ echo "::group::Finalizing Changes"
 # Replace the original rules file with the temporary one if changes were made
 if cmp -s "$RULES_FILE" "$TEMP_RULES_FILE"; then
     echo "No changes detected in ${RULES_FILE}."
-    rm "$TEMP_RULES_FILE" # Remove the temporary file
-    echo "::endgroup::" # End group here if no changes
-    exit 0
+    rm "$TEMP_RULES_FILE" # Delete the temporary file
+    # Set output parameter 'changes_made' to 'false'
+    echo "::set-output name=changes_made::false"
+    echo "::endgroup::"
+    exit 0 # 
 else
-    # Check the flag CHANGED as a secondary check
-    # If the files differ but CHANGED is not set, it indicates a logic error
-    if [[ "$CHANGED" -eq 1 ]]; then
+    # File contents differ -> Update the original file
     echo "Changes detected in ${RULES_FILE}. Updating..."
-    mv "$TEMP_RULES_FILE" "$RULES_FILE" # Replace the original file with the updated one
+    mv "$TEMP_RULES_FILE" "$RULES_FILE" # 
     echo "::notice file=${RULES_FILE}::${RULES_FILE} updated."
-        echo "::endgroup::"
-        exit 1
-    else
-        # Logic error: files differ but CHANGED flag is 0
-        echo "::warning:: Files differ according to cmp, but CHANGED flag is 0. Check script logic. NOT updating."
-        rm "$TEMP_RULES_FILE" # Just remove the temporary file
-        echo "::endgroup::"
-        exit 0
-    fi
+    # Set
+    echo "::set-output name=changes_made::true"
+    echo "::endgroup::"
+    exit 0
 fi
