@@ -32,40 +32,63 @@ while IFS= read -r line || [[ -n "$line" ]]; do
        [[ ! "$clean_line" == *\** ]] && \
        [[ "$clean_line" == *.* ]]; then
         domain_to_check="$clean_line"
-        # echo "Checking domain: ${domain_to_check}..."
+        # echo "Checking domain: ${domain_to_check}..." # Keep commented for minimal log
 
-        # Trying to resolve the domain (A record). +short outputs only the IP address
-        # stderr to /dev/null to suppress error messages
-        # Check dig exit status and if output contains a dot (likely an IP)
-        dig_output=$(dig +short "$domain_to_check" A @8.8.8.8 2>/dev/null)
-        # Verify if dig_output is not empty
-        if [[ -n "$dig_output" ]]; then
-            # Output is not empty -> Domain is available
-            # Add IP address to the comment if it exists
-            # echo "  Domain ${domain_to_check} is available (Resolved: ${dig_output})."
+        # 1. Try to resolve A record
+        a_record_output=$(dig +short "$domain_to_check" A @8.8.8.8 2>/dev/null)
+
+        # 2. If A record not found, try to resolve CNAME record
+        cname_record_output="" # Initialize empty
+        if [[ -z "$a_record_output" ]]; then
+            cname_record_output=$(dig +short "$domain_to_check" CNAME @8.8.8.8 2>/dev/null)
+        fi
+
+        # 3. Consider domain "available" for the list if EITHER A or CNAME record exists
+        if [[ -n "$a_record_output" || -n "$cname_record_output" ]]; then
+            # Domain is considered available (either direct IP or CNAME exists)
+            # Print a dot for progress
+            echo -n "."
+            ((DOTS_COUNT++))
+            if [[ "$DOTS_COUNT" -ge "$DOTS_PER_LINE" ]]; then
+                echo ""
+                echo -n "Processing domains: "
+                DOTS_COUNT=0
+            fi
+
+            # File modification logic: Only change if the "not available" comment needs removing
             if [[ "$original_comment" == *"$COMMENT_TEXT"* ]]; then
-                echo "${clean_line}" >> "$TEMP_RULES_FILE" # Write the clean line without the comment
-                # echo "  Removing '${COMMENT_TEXT}' comment."
+                echo "${clean_line}" >> "$TEMP_RULES_FILE"
+                # Log removal if needed
+                # echo -e "\n  [INFO] Removing '${COMMENT_TEXT}' for available domain (A/CNAME found): ${domain_to_check}."
                 CHANGED=1
             else
                 echo "$line" >> "$TEMP_RULES_FILE" # Write the original line as is
             fi
         else
-            # Output is empty -> Domain is NOT available
-            echo "  Domain ${domain_to_check} is NOT available."
+            # Domain is NOT available (neither A nor CNAME found)
+            ((UNAVAILABLE_COUNT++))
+            if [[ "$DOTS_COUNT" -gt 0 ]]; then
+                 echo ""
+                 DOTS_COUNT=0
+                 echo -n "Processing domains: "
+            fi
+            echo "[WARN] Domain ${domain_to_check} is NOT available (No A or CNAME)."
+
+            # File modification logic: Only change if the "not available" comment needs adding
             if [[ "$original_comment" != *"$COMMENT_TEXT"* ]]; then
                 # Append the comment, preserving other potential comments
                 # Check if # already exists in the original line
                 existing_comment_part="${original_comment#\#}" # Delete the leading #
                 echo "${clean_line} ${COMMENT_TEXT}${existing_comment_part}" >> "$TEMP_RULES_FILE"
-                # echo "  Adding '${COMMENT_TEXT}' comment."
+                # Log addition if needed
+                # echo "  [INFO] Adding '${COMMENT_TEXT}' comment for: ${domain_to_check}"
                 CHANGED=1
             else
                 echo "$line" >> "$TEMP_RULES_FILE" # Write the original line as is
             fi
         fi
     else
-        # If the line is not a domain to check, write it as is
+        # Line is not a candidate for checking (IP, wildcard, etc.), copy as is
         echo "$line" >> "$TEMP_RULES_FILE"
     fi
 
