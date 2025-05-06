@@ -49,7 +49,7 @@ while IFS= read -r line || [[ -n "$line" ]]; do
             set -e # Re-enable exit on error
 
             # Consider available if dig CNAME succeeded (exit 0)
-            if [[ $dig_cname_exit_code -eq]]; then
+            if [[ $dig_cname_exit_code -eq 0 ]]; then
                 available=true
             fi
         fi
