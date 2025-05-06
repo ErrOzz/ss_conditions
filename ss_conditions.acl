@@ -2,6 +2,7 @@
 
 [proxy_list]
 (?:^|\.)*\.ua$
+(?:^|\.)1020123234wedwecwe\.com $
 (?:^|\.)10minutemail\.com$
 (?:^|\.)10minutemail\.net$
 (?:^|\.)15min\.lt$
@@ -85,7 +86,7 @@
 (?:^|\.)delfi\.lt$
 (?:^|\.)delfi\.lv$
 (?:^|\.)dell\.com$
-(?:^|\.)dellcdn\.com $
+(?:^|\.)dellcdn\.com$
 (?:^|\.)demokracija\.eu$
 (?:^|\.)demokracija\.si$
 (?:^|\.)dennikn\.sk$
@@ -103,13 +104,13 @@
 (?:^|\.)discord\.media$
 (?:^|\.)discord\.new$
 (?:^|\.)discord\.store$
-(?:^|\.)discord\.tools $
+(?:^|\.)discord\.tools$
 (?:^|\.)discordapp\.com$
-(?:^|\.)discordapp\.net $
+(?:^|\.)discordapp\.net$
 (?:^|\.)discordcdn\.com$
 (?:^|\.)discordmerch\.com$
-(?:^|\.)discordpartygames\.com $
-(?:^|\.)discord-activities\.com $
+(?:^|\.)discordpartygames\.com$
+(?:^|\.)discord-activities\.com$
 (?:^|\.)discordactivities\.com$
 (?:^|\.)discordsays\.com$
 (?:^|\.)discours\.io$
@@ -163,7 +164,7 @@
 ^yt3\.ggpht\.com$
 (?:^|\.)github\.com$
 (?:^|\.)githubcopilot\.com$
-(?:^|\.)githubusercontent\.com $
+(?:^|\.)githubusercontent\.com$
 (?:^|\.)godaddy\.com$
 ^accounts\.google\.com$
 ^apis\.google\.com$
@@ -198,7 +199,7 @@
 ^independent\.com\.mt$
 (?:^|\.)independent\.ie$
 (?:^|\.)information\.dk$
-(?:^|\.)cdninstagram\.com $
+(?:^|\.)cdninstagram\.com$
 (?:^|\.)instagram\.com$
 (?:^|\.)intel\.com$
 (?:^|\.)irishtimes\.com$
@@ -221,7 +222,7 @@
 (?:^|\.)konachan\.com$
 (?:^|\.)korrespondent\.net$
 (?:^|\.)krymr\.com$
-(?:^|\.)kym-cdn\.com $
+(?:^|\.)kym-cdn\.com$
 (?:^|\.)la-croix\.com$
 (?:^|\.)la7\.it$
 (?:^|\.)lastampa\.it$
@@ -300,7 +301,7 @@
 (?:^|\.)nxp\.com$
 (?:^|\.)nyaa\.si$
 (?:^|\.)oaistatic\.com$
-(?:^|\.)oaiusercontent\.com $
+(?:^|\.)oaiusercontent\.com$
 (?:^|\.)observador\.pt$
 (?:^|\.)oculus\.com$
 (?:^|\.)odessa\.online$
@@ -446,7 +447,7 @@
 (?:^|\.)tvnet\.lv$
 (?:^|\.)tvrain\.ru$
 (?:^|\.)tvrain\.tv$
-(?:^|\.)twimg\.com $
+(?:^|\.)twimg\.com$
 (?:^|\.)twitter\.com$
 (?:^|\.)unian\.info$
 (?:^|\.)unian\.net$
@@ -476,7 +477,7 @@
 (?:^|\.)yaoilib\.me$
 (?:^|\.)yle\.fi$
 (?:^|\.)youtube\.com$
-(?:^|\.)ytimg\.com $
+(?:^|\.)ytimg\.com$
 (?:^|\.)yummyanime\.org$
 (?:^|\.)zahav\.ru$
 (?:^|\.)zaodno\.org$
