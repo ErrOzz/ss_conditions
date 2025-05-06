@@ -32,19 +32,40 @@ while IFS= read -r line || [[ -n "$line" ]]; do
        [[ ! "$clean_line" == *\** ]] && \
        [[ "$clean_line" == *.* ]]; then
         domain_to_check="$clean_line"
-        # echo "Checking domain: ${domain_to_check}..." # Keep commented for minimal log
+        # echo "Checking domain: ${domain_to_check}..." # Keep commented
+
+        available=false # Use a flag for clarity
 
         # 1. Try to resolve A record
+        # echo "[DEBUG] Checking A record for ${domain_to_check}..."
         a_record_output=$(dig +short "$domain_to_check" A @8.8.8.8 2>/dev/null)
 
+        if [[ -n "$a_record_output" ]]; then
+            # echo "[DEBUG] A record found: '${a_record_output}'"
+            available=true
+        else
+            # echo "[DEBUG] No A record found for ${domain_to_check}. Checking CNAME..."
         # 2. If A record not found, try to resolve CNAME record
-        cname_record_output="" # Initialize empty
-        if [[ -z "$a_record_output" ]]; then
+            # Run dig CNAME and capture exit code AND output separately for debug
+            set +e # Temporarily disable exit on error to capture exit code
             cname_record_output=$(dig +short "$domain_to_check" CNAME @8.8.8.8 2>/dev/null)
+            dig_cname_exit_code=$? # Capture exit code of dig CNAME
+            set -e # Re-enable exit on error
+
+            # Print debug info for the CNAME lookup
+            echo "[DEBUG CNAME for ${domain_to_check}] ExitCode=${dig_cname_exit_code} Output='${cname_record_output}'"
+
+            # Consider available if dig CNAME succeeded (exit 0) AND produced output
+            if [[ $dig_cname_exit_code -eq 0 && -n "$cname_record_output" ]]; then
+                # echo "[DEBUG] CNAME record found."
+                available=true
+            # else
+                # echo "[DEBUG] No CNAME record found or dig failed."
+            fi
         fi
 
-        # 3. Consider domain "available" if EITHER A or CNAME record exists
-        if [[ -n "$a_record_output" || -n "$cname_record_output" ]]; then
+        # 3. Final decision based on the 'available' flag
+        if [[ "$available" == true ]]; then
             # Domain is considered available
             # Logging for available domains is skipped for brevity
             # echo "  Domain ${domain_to_check} is available (A/CNAME found)."
@@ -56,11 +77,8 @@ while IFS= read -r line || [[ -n "$line" ]]; do
                 echo "$line" >> "$TEMP_RULES_FILE" # Write original line
             fi
         else
-            # Domain is NOT available (neither A nor CNAME found)
-            # Keep log for unavailable domains
-            echo "[WARN] Domain ${domain_to_check} is NOT available (No A or CNAME)." # Updated message
-
-            # File modification logic: Add comment if needed
+            # Domain is NOT available
+            echo "[WARN] Domain ${domain_to_check} is NOT available (No A or CNAME)." # Keep log
             if [[ "$original_comment" != *"$COMMENT_TEXT"* ]]; then
                 existing_comment_part="${original_comment#\#}" # Get original comment text after #
                 echo "${clean_line} ${COMMENT_TEXT}${existing_comment_part}" >> "$TEMP_RULES_FILE" # Add comment
@@ -85,17 +103,16 @@ echo "::group::Finalizing Changes"
 if cmp -s "$RULES_FILE" "$TEMP_RULES_FILE"; then
     echo "No changes detected in ${RULES_FILE}."
     rm "$TEMP_RULES_FILE" # Delete the temporary file
-    # Set output parameter 'changes_made' to 'false'
-    echo "::set-output name=changes_made::false"
+    # Set output variable to indicate no changes
+    echo "changes_made=false" >> "$GITHUB_OUTPUT"
     echo "::endgroup::"
-    exit 0 # 
 else
     # File contents differ -> Update the original file
     echo "Changes detected in ${RULES_FILE}. Updating..."
     mv "$TEMP_RULES_FILE" "$RULES_FILE" # 
     echo "::notice file=${RULES_FILE}::${RULES_FILE} updated."
-    # Set
-    echo "::set-output name=changes_made::true"
+    # Set output variable to indicate changes
+    echo "changes_made=true" >> "$GITHUB_OUTPUT"
     echo "::endgroup::"
-    exit 0
 fi
+exit 0

@@ -39,7 +39,7 @@ jobs:
           bash check_domains.sh
 
       - name: Commit and Push changes if any
-        # Check the output parameter 'changes_made' from the previous step
+        # Check the output variable $GITHUB_OUTPUTS from the previous step
         if: steps.check.outputs.changes_made == 'true'
         run: |
           echo "Changes detected by check_domains.sh. Committing..."
