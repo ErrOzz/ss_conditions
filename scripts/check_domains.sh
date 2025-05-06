@@ -32,35 +32,25 @@ while IFS= read -r line || [[ -n "$line" ]]; do
        [[ ! "$clean_line" == *\** ]] && \
        [[ "$clean_line" == *.* ]]; then
         domain_to_check="$clean_line"
-        # echo "Checking domain: ${domain_to_check}..." # Keep commented
 
         available=false # Use a flag for clarity
 
         # 1. Try to resolve A record
-        # echo "[DEBUG] Checking A record for ${domain_to_check}..."
         a_record_output=$(dig +short "$domain_to_check" A @8.8.8.8 2>/dev/null)
 
         if [[ -n "$a_record_output" ]]; then
-            # echo "[DEBUG] A record found: '${a_record_output}'"
             available=true
         else
-            # echo "[DEBUG] No A record found for ${domain_to_check}. Checking CNAME..."
         # 2. If A record not found, try to resolve CNAME record
-            # Run dig CNAME and capture exit code AND output separately for debug
+            # Run dig CNAME and capture exit code
             set +e # Temporarily disable exit on error to capture exit code
             cname_record_output=$(dig +short "$domain_to_check" CNAME @8.8.8.8 2>/dev/null)
             dig_cname_exit_code=$? # Capture exit code of dig CNAME
             set -e # Re-enable exit on error
 
-            # Print debug info for the CNAME lookup
-            echo "[DEBUG CNAME for ${domain_to_check}] ExitCode=${dig_cname_exit_code} Output='${cname_record_output}'"
-
-            # Consider available if dig CNAME succeeded (exit 0) AND produced output
-            if [[ $dig_cname_exit_code -eq 0 && -n "$cname_record_output" ]]; then
-                # echo "[DEBUG] CNAME record found."
+            # Consider available if dig CNAME succeeded (exit 0)
+            if [[ $dig_cname_exit_code -eq]]; then
                 available=true
-            # else
-                # echo "[DEBUG] No CNAME record found or dig failed."
             fi
         fi
 
