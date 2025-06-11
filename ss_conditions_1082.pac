@@ -272,6 +272,7 @@ var __BLOCKEDSITES__ = [
   "*.mintmanga.live",
   "*.moscow-post.su",
   "*.mouser.com",
+  "*.mhcache.com",
   "*.myheritage.com",
   "*.myrotvorets.center",
   "echo.msk.ru",
