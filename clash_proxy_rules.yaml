@@ -378,10 +378,12 @@ payload:
   - DOMAIN-SUFFIX,rule34.xxx
   - DOMAIN-SUFFIX,rutor.info
   - DOMAIN-SUFFIX,rutor.is
+  - DOMAIN-SUFFIX,rutracker.cc
   - DOMAIN-SUFFIX,rutracker.net
   - DOMAIN-SUFFIX,rutracker.nl
   - DOMAIN-SUFFIX,rutracker.org
   - DOMAIN-SUFFIX,rutracker.ru
+  - DOMAIN-SUFFIX,rutrk.org
   - DOMAIN-SUFFIX,sakhalin.info
   - DOMAIN-SUFFIX,sakharovfoundation.org
   - DOMAIN-SUFFIX,saverudata.net
