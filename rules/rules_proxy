@@ -1,5 +1,5 @@
 *.ua
-1020123234wedwecwe.com # fake domain
+1020123234wedwecwe.com # not available fake domain
 10minutemail.com
 10minutemail.net
 15min.lt
@@ -20,7 +20,7 @@ agents.media
 agentura.ru
 amnezia.org
 aws.amazon.com
-animevost.tv
+animevost.tv # not available
 anthropic.com
 antiwar.in
 antiwarcommittee.info
@@ -83,7 +83,7 @@ delfi.ee
 delfi.lt
 delfi.lv
 dell.com
-dellcdn.com
+dellcdn.com # not available
 demokracija.eu
 demokracija.si
 dennikn.sk
@@ -102,13 +102,13 @@ discord.gifts
 discord.media
 discord.new
 discord.store
-discord.tools
+discord.tools # not available
 discordapp.com
-discordapp.net
+discordapp.net # not available
 discordcdn.com
 discordmerch.com
 discordpartygames.com
-discord-activities.com
+discord-activities.com # not available
 discordactivities.com
 discordsays.com
 discours.io
@@ -164,7 +164,7 @@ yt3.ggpht.com
 # for copilot in vscode
 github.com
 githubcopilot.com
-githubusercontent.com
+githubusercontent.com # not available
 # end for copilot in vscode
 godaddy.com
 # google services
@@ -203,7 +203,7 @@ independent.com.mt
 independent.ie
 information.dk
 # for instagram
-cdninstagram.com
+cdninstagram.com # not available
 instagram.com
 # end for instagram
 intel.com
@@ -227,7 +227,7 @@ knowyourmeme.com
 konachan.com
 korrespondent.net
 krymr.com
-kym-cdn.com
+kym-cdn.com # not available
 la-croix.com
 la7.it
 lastampa.it
@@ -310,7 +310,7 @@ ntc.party
 nxp.com
 nyaa.si
 oaistatic.com
-oaiusercontent.com
+oaiusercontent.com # not available
 observador.pt
 oculus.com
 odessa.online
@@ -375,7 +375,7 @@ repubblica.it
 republic.ru
 resistancetheatre.org
 rezka.ag
-rezonans.media
+rezonans.media # not available
 rferl.org
 roar-review.com
 root-nation.com
@@ -388,7 +388,7 @@ rule34.xxx
 rutor.info
 rutor.is
 # for rutracker
-rutracker.cc
+rutracker.cc # not available
 rutracker.net
 rutracker.nl
 rutracker.org
@@ -410,7 +410,7 @@ sketchup.com
 slavicsac.com
 smartasset.com
 sme.sk
-sobesednik.com
+sobesednik.com # not available
 sobytiya.info
 solopress.com
 sotaproject.com
@@ -460,7 +460,7 @@ tvmnews.mt
 tvnet.lv
 tvrain.ru
 tvrain.tv
-twimg.com
+twimg.com # not available
 twitter.com
 unian.info
 unian.net
@@ -490,7 +490,7 @@ yande.re
 yaoilib.me
 yle.fi
 youtube.com
-ytimg.com
+ytimg.com # not available
 yummyanime.org
 zahav.ru
 zaodno.org
