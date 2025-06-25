@@ -4,6 +4,7 @@ set -eo pipefail
 RULES_FILE="../rules/rules_proxy"
 TEMP_RULES_FILE="${RULES_FILE}.tmp"
 COMMENT_TEXT="# not available"
+HTTP_CHECK_TIMEOUT=5
 
 echo "Starting domain availability check for ${RULES_FILE}..."
 
@@ -47,14 +48,30 @@ while IFS= read -r line || [[ -n "$line" ]]; do
             cname_record_output=$(dig +short "$domain_to_check" CNAME @8.8.8.8 2>/dev/null)
             dig_cname_exit_code=$? # Capture exit code of dig CNAME
             set -e # Re-enable exit on error
-
+            
             # Consider available if dig CNAME succeeded (exit 0)
-            if [[ $dig_cname_exit_code -eq 0 ]]; then
+            if [[ $dig_cname_exit_code -eq 0 && -n "$cname_record_output" ]]; then
                 available=true
+                # echo "[DEBUG] DNS CNAME record found for ${domain_to_check}: ${cname_record_output}"
+            fi
+        fi
+        # 3. If both A and CNAME records are not found, check HTTP/S availability
+        if [[ "$available" == false ]]; then
+            # echo "[INFO] DNS check failed for ${domain_to_check}. Attempting HTTP/S check..."
+            # Try to access the domain via HTTP/S
+            # curl: -s (silent), -I (HEAD request), -L (follow redirects), -f (fail on server errors 4xx, 5xx)
+            #       --max-time (timeout), -o /dev/null (discard body)
+            # &>/dev/null redirects both stdout and stderr to /dev/null
+            if curl -s -I -L -f --max-time "$HTTP_CHECK_TIMEOUT" "https://${domain_to_check}" &>/dev/null || \
+               curl -s -I -L -f --max-time "$HTTP_CHECK_TIMEOUT" "http://${domain_to_check}" &>/dev/null; then
+                available=true
+                # echo "[INFO] HTTP/S check successful for ${domain_to_check}."
+            # else
+                # echo "[DEBUG] HTTP/S check also failed for ${domain_to_check}."
             fi
         fi
 
-        # 3. Final decision based on the 'available' flag
+        # Final decision and logging in the rules file
         if [[ "$available" == true ]]; then
             # Domain is considered available
             # Logging for available domains is skipped for brevity
@@ -68,7 +85,7 @@ while IFS= read -r line || [[ -n "$line" ]]; do
             fi
         else
             # Domain is NOT available
-            echo "[WARN] Domain ${domain_to_check} is NOT available (No A or CNAME)." # Keep log
+            echo "[WARN] Domain ${domain_to_check} is NOT available (DNS and HTTP/S checks failed)." # Keep log
             if [[ "$original_comment" != *"$COMMENT_TEXT"* ]]; then
                 existing_comment_part="${original_comment#\#}" # Get original comment text after #
                 echo "${clean_line} ${COMMENT_TEXT}${existing_comment_part}" >> "$TEMP_RULES_FILE" # Add comment
