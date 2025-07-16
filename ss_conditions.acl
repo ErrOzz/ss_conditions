@@ -23,7 +23,7 @@
 (?:^|\.)agentura\.ru$
 (?:^|\.)amnezia\.org$
 ^aws\.amazon\.com$
-(?:^|\.)animevost\.tv$
+(?:^|\.)animevost\.tv $
 (?:^|\.)anthropic\.com$
 (?:^|\.)antiwar\.in$
 (?:^|\.)antiwarcommittee\.info$
@@ -86,7 +86,7 @@
 (?:^|\.)delfi\.lt$
 (?:^|\.)delfi\.lv$
 (?:^|\.)dell\.com$
-(?:^|\.)dellcdn\.com$
+(?:^|\.)dellcdn\.com $
 (?:^|\.)demokracija\.eu$
 (?:^|\.)demokracija\.si$
 (?:^|\.)dennikn\.sk$
@@ -104,13 +104,13 @@
 (?:^|\.)discord\.media$
 (?:^|\.)discord\.new$
 (?:^|\.)discord\.store$
-(?:^|\.)discord\.tools$
+(?:^|\.)discord\.tools $
 (?:^|\.)discordapp\.com$
-(?:^|\.)discordapp\.net$
+(?:^|\.)discordapp\.net $
 (?:^|\.)discordcdn\.com$
 (?:^|\.)discordmerch\.com$
 (?:^|\.)discordpartygames\.com$
-(?:^|\.)discord-activities\.com$
+(?:^|\.)discord-activities\.com $
 (?:^|\.)discordactivities\.com$
 (?:^|\.)discordsays\.com$
 (?:^|\.)discours\.io$
@@ -142,6 +142,7 @@
 (?:^|\.)expresso\.pt$
 (?:^|\.)expressvpn\.com$
 (?:^|\.)facebook\.com$
+(?:^|\.)facebook\.net$
 (?:^|\.)fanatical\.com$
 (?:^|\.)fapreactor\.com$
 (?:^|\.)faz\.net$
@@ -164,7 +165,7 @@
 ^yt3\.ggpht\.com$
 (?:^|\.)github\.com$
 (?:^|\.)githubcopilot\.com$
-(?:^|\.)githubusercontent\.com$
+(?:^|\.)githubusercontent\.com $
 (?:^|\.)godaddy\.com$
 ^accounts\.google\.com$
 ^apis\.google\.com$
@@ -199,7 +200,7 @@
 ^independent\.com\.mt$
 (?:^|\.)independent\.ie$
 (?:^|\.)information\.dk$
-(?:^|\.)cdninstagram\.com$
+(?:^|\.)cdninstagram\.com $
 (?:^|\.)instagram\.com$
 (?:^|\.)intel\.com$
 (?:^|\.)irishtimes\.com$
@@ -222,7 +223,7 @@
 (?:^|\.)konachan\.com$
 (?:^|\.)korrespondent\.net$
 (?:^|\.)krymr\.com$
-(?:^|\.)kym-cdn\.com$
+(?:^|\.)kym-cdn\.com $
 (?:^|\.)la-croix\.com$
 (?:^|\.)la7\.it$
 (?:^|\.)lastampa\.it$
@@ -303,7 +304,7 @@
 (?:^|\.)nxp\.com$
 (?:^|\.)nyaa\.si$
 (?:^|\.)oaistatic\.com$
-(?:^|\.)oaiusercontent\.com$
+(?:^|\.)oaiusercontent\.com $
 (?:^|\.)observador\.pt$
 (?:^|\.)oculus\.com$
 (?:^|\.)odessa\.online$
@@ -368,7 +369,7 @@
 (?:^|\.)republic\.ru$
 (?:^|\.)resistancetheatre\.org$
 (?:^|\.)rezka\.ag$
-(?:^|\.)rezonans\.media$
+(?:^|\.)rezonans\.media $
 (?:^|\.)rferl\.org$
 (?:^|\.)roar-review\.com$
 (?:^|\.)root-nation\.com$
@@ -380,7 +381,7 @@
 (?:^|\.)rule34\.xxx$
 (?:^|\.)rutor\.info$
 (?:^|\.)rutor\.is$
-(?:^|\.)rutracker\.cc$
+(?:^|\.)rutracker\.cc $
 (?:^|\.)rutracker\.net$
 (?:^|\.)rutracker\.nl$
 (?:^|\.)rutracker\.org$
@@ -451,7 +452,7 @@
 (?:^|\.)tvnet\.lv$
 (?:^|\.)tvrain\.ru$
 (?:^|\.)tvrain\.tv$
-(?:^|\.)twimg\.com$
+(?:^|\.)twimg\.com $
 (?:^|\.)twitter\.com$
 (?:^|\.)unian\.info$
 (?:^|\.)unian\.net$
@@ -481,7 +482,7 @@
 (?:^|\.)yaoilib\.me$
 (?:^|\.)yle\.fi$
 (?:^|\.)youtube\.com$
-(?:^|\.)ytimg\.com$
+(?:^|\.)ytimg\.com $
 (?:^|\.)yummyanime\.org$
 (?:^|\.)zahav\.ru$
 (?:^|\.)zaodno\.org$

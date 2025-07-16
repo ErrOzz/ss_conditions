@@ -21,7 +21,7 @@ payload:
   - DOMAIN-SUFFIX,agentura.ru
   - DOMAIN-SUFFIX,amnezia.org
   - DOMAIN-SUFFIX,aws.amazon.com
-  - DOMAIN-SUFFIX,animevost.tv
+  - DOMAIN-SUFFIX,animevost.tv 
   - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,antiwar.in
   - DOMAIN-SUFFIX,antiwarcommittee.info
@@ -84,7 +84,7 @@ payload:
   - DOMAIN-SUFFIX,delfi.lt
   - DOMAIN-SUFFIX,delfi.lv
   - DOMAIN-SUFFIX,dell.com
-  - DOMAIN-SUFFIX,dellcdn.com
+  - DOMAIN-SUFFIX,dellcdn.com 
   - DOMAIN-SUFFIX,demokracija.eu
   - DOMAIN-SUFFIX,demokracija.si
   - DOMAIN-SUFFIX,dennikn.sk
@@ -102,13 +102,13 @@ payload:
   - DOMAIN-SUFFIX,discord.media
   - DOMAIN-SUFFIX,discord.new
   - DOMAIN-SUFFIX,discord.store
-  - DOMAIN-SUFFIX,discord.tools
+  - DOMAIN-SUFFIX,discord.tools 
   - DOMAIN-SUFFIX,discordapp.com
-  - DOMAIN-SUFFIX,discordapp.net
+  - DOMAIN-SUFFIX,discordapp.net 
   - DOMAIN-SUFFIX,discordcdn.com
   - DOMAIN-SUFFIX,discordmerch.com
   - DOMAIN-SUFFIX,discordpartygames.com
-  - DOMAIN-SUFFIX,discord-activities.com
+  - DOMAIN-SUFFIX,discord-activities.com 
   - DOMAIN-SUFFIX,discordactivities.com
   - DOMAIN-SUFFIX,discordsays.com
   - DOMAIN-SUFFIX,discours.io
@@ -140,6 +140,7 @@ payload:
   - DOMAIN-SUFFIX,expresso.pt
   - DOMAIN-SUFFIX,expressvpn.com
   - DOMAIN-SUFFIX,facebook.com
+  - DOMAIN-SUFFIX,facebook.net
   - DOMAIN-SUFFIX,fanatical.com
   - DOMAIN-SUFFIX,fapreactor.com
   - DOMAIN-SUFFIX,faz.net
@@ -162,7 +163,7 @@ payload:
   - DOMAIN-SUFFIX,yt3.ggpht.com
   - DOMAIN-SUFFIX,github.com
   - DOMAIN-SUFFIX,githubcopilot.com
-  - DOMAIN-SUFFIX,githubusercontent.com
+  - DOMAIN-SUFFIX,githubusercontent.com 
   - DOMAIN-SUFFIX,godaddy.com
   - DOMAIN-SUFFIX,accounts.google.com
   - DOMAIN-SUFFIX,apis.google.com
@@ -197,7 +198,7 @@ payload:
   - DOMAIN-SUFFIX,independent.com.mt
   - DOMAIN-SUFFIX,independent.ie
   - DOMAIN-SUFFIX,information.dk
-  - DOMAIN-SUFFIX,cdninstagram.com
+  - DOMAIN-SUFFIX,cdninstagram.com 
   - DOMAIN-SUFFIX,instagram.com
   - DOMAIN-SUFFIX,intel.com
   - DOMAIN-SUFFIX,irishtimes.com
@@ -220,7 +221,7 @@ payload:
   - DOMAIN-SUFFIX,konachan.com
   - DOMAIN-SUFFIX,korrespondent.net
   - DOMAIN-SUFFIX,krymr.com
-  - DOMAIN-SUFFIX,kym-cdn.com
+  - DOMAIN-SUFFIX,kym-cdn.com 
   - DOMAIN-SUFFIX,la-croix.com
   - DOMAIN-SUFFIX,la7.it
   - DOMAIN-SUFFIX,lastampa.it
@@ -301,7 +302,7 @@ payload:
   - DOMAIN-SUFFIX,nxp.com
   - DOMAIN-SUFFIX,nyaa.si
   - DOMAIN-SUFFIX,oaistatic.com
-  - DOMAIN-SUFFIX,oaiusercontent.com
+  - DOMAIN-SUFFIX,oaiusercontent.com 
   - DOMAIN-SUFFIX,observador.pt
   - DOMAIN-SUFFIX,oculus.com
   - DOMAIN-SUFFIX,odessa.online
@@ -366,7 +367,7 @@ payload:
   - DOMAIN-SUFFIX,republic.ru
   - DOMAIN-SUFFIX,resistancetheatre.org
   - DOMAIN-SUFFIX,rezka.ag
-  - DOMAIN-SUFFIX,rezonans.media
+  - DOMAIN-SUFFIX,rezonans.media 
   - DOMAIN-SUFFIX,rferl.org
   - DOMAIN-SUFFIX,roar-review.com
   - DOMAIN-SUFFIX,root-nation.com
@@ -378,7 +379,7 @@ payload:
   - DOMAIN-SUFFIX,rule34.xxx
   - DOMAIN-SUFFIX,rutor.info
   - DOMAIN-SUFFIX,rutor.is
-  - DOMAIN-SUFFIX,rutracker.cc
+  - DOMAIN-SUFFIX,rutracker.cc 
   - DOMAIN-SUFFIX,rutracker.net
   - DOMAIN-SUFFIX,rutracker.nl
   - DOMAIN-SUFFIX,rutracker.org
@@ -449,7 +450,7 @@ payload:
   - DOMAIN-SUFFIX,tvnet.lv
   - DOMAIN-SUFFIX,tvrain.ru
   - DOMAIN-SUFFIX,tvrain.tv
-  - DOMAIN-SUFFIX,twimg.com
+  - DOMAIN-SUFFIX,twimg.com 
   - DOMAIN-SUFFIX,twitter.com
   - DOMAIN-SUFFIX,unian.info
   - DOMAIN-SUFFIX,unian.net
@@ -479,7 +480,7 @@ payload:
   - DOMAIN-SUFFIX,yaoilib.me
   - DOMAIN-SUFFIX,yle.fi
   - DOMAIN-SUFFIX,youtube.com
-  - DOMAIN-SUFFIX,ytimg.com
+  - DOMAIN-SUFFIX,ytimg.com 
   - DOMAIN-SUFFIX,yummyanime.org
   - DOMAIN-SUFFIX,zahav.ru
   - DOMAIN-SUFFIX,zaodno.org
