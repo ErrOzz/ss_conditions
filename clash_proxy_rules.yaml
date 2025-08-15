@@ -21,7 +21,8 @@ payload:
   - DOMAIN-SUFFIX,agentura.ru
   - DOMAIN-SUFFIX,amnezia.org
   - DOMAIN-SUFFIX,aws.amazon.com
-  - DOMAIN-SUFFIX,animevost.tv 
+  - DOMAIN-SUFFIX,animego.org
+  - DOMAIN-SUFFIX,animevost.tv
   - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,antiwar.in
   - DOMAIN-SUFFIX,antiwarcommittee.info
@@ -72,6 +73,8 @@ payload:
   - DOMAIN-SUFFIX,crocoblock.com
   - DOMAIN-SUFFIX,cropp.com
   - DOMAIN-SUFFIX,currenttime.tv
+  - DOMAIN-SUFFIX,cursor.com
+  - DOMAIN-SUFFIX,cursor.sh
   - DOMAIN-SUFFIX,cvedetails.com
   - DOMAIN-SUFFIX,cyprus-mail.com
   - DOMAIN-SUFFIX,cyprustimes.com
@@ -140,7 +143,7 @@ payload:
   - DOMAIN-SUFFIX,expresso.pt
   - DOMAIN-SUFFIX,expressvpn.com
   - DOMAIN-SUFFIX,facebook.com
-  - DOMAIN-SUFFIX,facebook.net
+  - DOMAIN-SUFFIX,facebook.net 
   - DOMAIN-SUFFIX,fanatical.com
   - DOMAIN-SUFFIX,fapreactor.com
   - DOMAIN-SUFFIX,faz.net
@@ -164,6 +167,7 @@ payload:
   - DOMAIN-SUFFIX,github.com
   - DOMAIN-SUFFIX,githubcopilot.com
   - DOMAIN-SUFFIX,githubusercontent.com 
+  - DOMAIN-SUFFIX,glasnaya.media
   - DOMAIN-SUFFIX,godaddy.com
   - DOMAIN-SUFFIX,accounts.google.com
   - DOMAIN-SUFFIX,apis.google.com
@@ -176,6 +180,7 @@ payload:
   - DOMAIN-SUFFIX,play.google.com
   - DOMAIN-SUFFIX,google.dev
   - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN-SUFFIX,googleusercontent.com
   - DOMAIN-SUFFIX,googlevideo.com
   - DOMAIN-SUFFIX,grani.ru
   - DOMAIN-SUFFIX,graty.me
@@ -193,6 +198,7 @@ payload:
   - DOMAIN-SUFFIX,hostinger.com
   - DOMAIN-SUFFIX,hs.fi
   - DOMAIN-SUFFIX,idelreal.org
+  - DOMAIN-SUFFIX,ikianime.tv
   - DOMAIN-SUFFIX,iltalehti.fi
   - DOMAIN-SUFFIX,in-fact.org
   - DOMAIN-SUFFIX,independent.com.mt
@@ -208,9 +214,12 @@ payload:
   - DOMAIN-SUFFIX,itsmycity.ru
   - DOMAIN-SUFFIX,jakpolak.com
   - DOMAIN-SUFFIX,jauns.lv
+  - DOMAIN-SUFFIX,plugins.jetbrains.com
   - DOMAIN-SUFFIX,joyreactor.cc
   - DOMAIN-SUFFIX,jsfiddle.net
+  - DOMAIN-SUFFIX,jut.su
   - DOMAIN-SUFFIX,kaleido.ai
+  - DOMAIN-SUFFIX,kara.su
   - DOMAIN-SUFFIX,kasparov.ru
   - DOMAIN-SUFFIX,kavkaz-uzel.eu
   - DOMAIN-SUFFIX,kavkazr.com
@@ -271,10 +280,12 @@ payload:
   - DOMAIN-SUFFIX,mignews.com
   - DOMAIN-SUFFIX,miniplay.com
   - DOMAIN-SUFFIX,mintmanga.live
+  - DOMAIN-SUFFIX,monotype.com
   - DOMAIN-SUFFIX,moscow-post.su
   - DOMAIN-SUFFIX,mouser.com
   - DOMAIN-SUFFIX,mhcache.com
   - DOMAIN-SUFFIX,myheritage.com
+  - DOMAIN-SUFFIX,myfonts.com
   - DOMAIN-SUFFIX,myrotvorets.center
   - DOMAIN-SUFFIX,echo.msk.ru
   - DOMAIN-SUFFIX,navalny.com
@@ -285,6 +296,7 @@ payload:
   - DOMAIN-SUFFIX,newtimes.ru
   - DOMAIN-SUFFIX,nhentai.net
   - DOMAIN-SUFFIX,nhentai.to
+  - DOMAIN-SUFFIX,nnm-club.me
   - DOMAIN-SUFFIX,nnmclub.to
   - DOMAIN-SUFFIX,nos.nl
   - DOMAIN-SUFFIX,notion.so
@@ -316,6 +328,7 @@ payload:
   - DOMAIN-SUFFIX,orf.at
   - DOMAIN-SUFFIX,osti.gov
   - DOMAIN-SUFFIX,otkrito.lv
+  - DOMAIN-SUFFIX,ovd.cards
   - DOMAIN-SUFFIX,ovd.info
   - DOMAIN-SUFFIX,ovd.news
   - DOMAIN-SUFFIX,ovdinfo.legal

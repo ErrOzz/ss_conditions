@@ -23,7 +23,8 @@
 (?:^|\.)agentura\.ru$
 (?:^|\.)amnezia\.org$
 ^aws\.amazon\.com$
-(?:^|\.)animevost\.tv $
+(?:^|\.)animego\.org$
+(?:^|\.)animevost\.tv$
 (?:^|\.)anthropic\.com$
 (?:^|\.)antiwar\.in$
 (?:^|\.)antiwarcommittee\.info$
@@ -74,6 +75,8 @@
 (?:^|\.)crocoblock\.com$
 (?:^|\.)cropp\.com$
 (?:^|\.)currenttime\.tv$
+(?:^|\.)cursor\.com$
+(?:^|\.)cursor\.sh$
 (?:^|\.)cvedetails\.com$
 (?:^|\.)cyprus-mail\.com$
 (?:^|\.)cyprustimes\.com$
@@ -142,7 +145,7 @@
 (?:^|\.)expresso\.pt$
 (?:^|\.)expressvpn\.com$
 (?:^|\.)facebook\.com$
-(?:^|\.)facebook\.net$
+(?:^|\.)facebook\.net $
 (?:^|\.)fanatical\.com$
 (?:^|\.)fapreactor\.com$
 (?:^|\.)faz\.net$
@@ -166,6 +169,7 @@
 (?:^|\.)github\.com$
 (?:^|\.)githubcopilot\.com$
 (?:^|\.)githubusercontent\.com $
+(?:^|\.)glasnaya\.media$
 (?:^|\.)godaddy\.com$
 ^accounts\.google\.com$
 ^apis\.google\.com$
@@ -178,6 +182,7 @@
 ^play\.google\.com$
 (?:^|\.)google\.dev$
 (?:^|\.)googleapis\.com$
+(?:^|\.)googleusercontent\.com$
 (?:^|\.)googlevideo\.com$
 (?:^|\.)grani\.ru$
 (?:^|\.)graty\.me$
@@ -195,6 +200,7 @@
 (?:^|\.)hostinger\.com$
 (?:^|\.)hs\.fi$
 (?:^|\.)idelreal\.org$
+(?:^|\.)ikianime\.tv$
 (?:^|\.)iltalehti\.fi$
 (?:^|\.)in-fact\.org$
 ^independent\.com\.mt$
@@ -210,9 +216,12 @@
 (?:^|\.)itsmycity\.ru$
 (?:^|\.)jakpolak\.com$
 (?:^|\.)jauns\.lv$
+^plugins\.jetbrains\.com$
 (?:^|\.)joyreactor\.cc$
 (?:^|\.)jsfiddle\.net$
+(?:^|\.)jut\.su$
 (?:^|\.)kaleido\.ai$
+(?:^|\.)kara\.su$
 (?:^|\.)kasparov\.ru$
 (?:^|\.)kavkaz-uzel\.eu$
 (?:^|\.)kavkazr\.com$
@@ -273,10 +282,12 @@
 (?:^|\.)mignews\.com$
 (?:^|\.)miniplay\.com$
 (?:^|\.)mintmanga\.live$
+(?:^|\.)monotype\.com$
 (?:^|\.)moscow-post\.su$
 (?:^|\.)mouser\.com$
 (?:^|\.)mhcache\.com$
 (?:^|\.)myheritage\.com$
+(?:^|\.)myfonts\.com$
 (?:^|\.)myrotvorets\.center$
 ^echo\.msk\.ru$
 (?:^|\.)navalny\.com$
@@ -287,6 +298,7 @@
 (?:^|\.)newtimes\.ru$
 (?:^|\.)nhentai\.net$
 (?:^|\.)nhentai\.to$
+(?:^|\.)nnm-club\.me$
 (?:^|\.)nnmclub\.to$
 (?:^|\.)nos\.nl$
 (?:^|\.)notion\.so$
@@ -318,6 +330,7 @@
 (?:^|\.)orf\.at$
 (?:^|\.)osti\.gov$
 (?:^|\.)otkrito\.lv$
+(?:^|\.)ovd\.cards$
 (?:^|\.)ovd\.info$
 (?:^|\.)ovd\.news$
 (?:^|\.)ovdinfo\.legal$
