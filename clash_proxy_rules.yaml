@@ -21,6 +21,7 @@ payload:
   - DOMAIN-SUFFIX,agentura.ru
   - DOMAIN-SUFFIX,amnezia.org
   - DOMAIN-SUFFIX,aws.amazon.com
+  - DOMAIN-SUFFIX,analog.com
   - DOMAIN-SUFFIX,animego.org
   - DOMAIN-SUFFIX,animevost.tv
   - DOMAIN-SUFFIX,anthropic.com
@@ -198,7 +199,7 @@ payload:
   - DOMAIN-SUFFIX,hostinger.com
   - DOMAIN-SUFFIX,hs.fi
   - DOMAIN-SUFFIX,idelreal.org
-  - DOMAIN-SUFFIX,ikianime.tv
+  - DOMAIN-SUFFIX,ikianime.tv 
   - DOMAIN-SUFFIX,iltalehti.fi
   - DOMAIN-SUFFIX,in-fact.org
   - DOMAIN-SUFFIX,independent.com.mt
@@ -296,7 +297,7 @@ payload:
   - DOMAIN-SUFFIX,newtimes.ru
   - DOMAIN-SUFFIX,nhentai.net
   - DOMAIN-SUFFIX,nhentai.to
-  - DOMAIN-SUFFIX,nnm-club.me
+  - DOMAIN-SUFFIX,nnm-club.me 
   - DOMAIN-SUFFIX,nnmclub.to
   - DOMAIN-SUFFIX,nos.nl
   - DOMAIN-SUFFIX,notion.so
@@ -328,7 +329,7 @@ payload:
   - DOMAIN-SUFFIX,orf.at
   - DOMAIN-SUFFIX,osti.gov
   - DOMAIN-SUFFIX,otkrito.lv
-  - DOMAIN-SUFFIX,ovd.cards
+  - DOMAIN-SUFFIX,ovd.cards 
   - DOMAIN-SUFFIX,ovd.info
   - DOMAIN-SUFFIX,ovd.news
   - DOMAIN-SUFFIX,ovdinfo.legal

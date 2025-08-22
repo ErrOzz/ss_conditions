@@ -23,6 +23,7 @@
 (?:^|\.)agentura\.ru$
 (?:^|\.)amnezia\.org$
 ^aws\.amazon\.com$
+(?:^|\.)analog\.com$
 (?:^|\.)animego\.org$
 (?:^|\.)animevost\.tv$
 (?:^|\.)anthropic\.com$
@@ -200,7 +201,7 @@
 (?:^|\.)hostinger\.com$
 (?:^|\.)hs\.fi$
 (?:^|\.)idelreal\.org$
-(?:^|\.)ikianime\.tv$
+(?:^|\.)ikianime\.tv $
 (?:^|\.)iltalehti\.fi$
 (?:^|\.)in-fact\.org$
 ^independent\.com\.mt$
@@ -298,7 +299,7 @@
 (?:^|\.)newtimes\.ru$
 (?:^|\.)nhentai\.net$
 (?:^|\.)nhentai\.to$
-(?:^|\.)nnm-club\.me$
+(?:^|\.)nnm-club\.me $
 (?:^|\.)nnmclub\.to$
 (?:^|\.)nos\.nl$
 (?:^|\.)notion\.so$
@@ -330,7 +331,7 @@
 (?:^|\.)orf\.at$
 (?:^|\.)osti\.gov$
 (?:^|\.)otkrito\.lv$
-(?:^|\.)ovd\.cards$
+(?:^|\.)ovd\.cards $
 (?:^|\.)ovd\.info$
 (?:^|\.)ovd\.news$
 (?:^|\.)ovdinfo\.legal$
