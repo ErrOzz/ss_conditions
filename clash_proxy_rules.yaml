@@ -27,6 +27,7 @@ payload:
   - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,antiwar.in
   - DOMAIN-SUFFIX,antiwarcommittee.info
+  - DOMAIN-SUFFIX,apkmirror.com
   - DOMAIN-SUFFIX,apollo.lv
   - DOMAIN-SUFFIX,appleinsider.ru
   - DOMAIN-SUFFIX,appspot.com
@@ -237,7 +238,7 @@ payload:
   - DOMAIN-SUFFIX,lastampa.it
   - DOMAIN-SUFFIX,lantern.io
   - DOMAIN-SUFFIX,lemonde.fr
-  - DOMAIN-SUFFIX,lentachel.ru
+  - DOMAIN-SUFFIX,lentachel.ru 
   - DOMAIN-SUFFIX,leonidvolkov.ru
   - DOMAIN-SUFFIX,levif.be
   - DOMAIN-SUFFIX,lexpress.fr
@@ -311,7 +312,7 @@ payload:
   - DOMAIN-SUFFIX,novayapolsha.pl
   - DOMAIN-SUFFIX,novyny.live
   - DOMAIN-SUFFIX,nrc.nl
-  - DOMAIN-SUFFIX,ntc.party
+  - DOMAIN-SUFFIX,ntc.party 
   - DOMAIN-SUFFIX,nxp.com
   - DOMAIN-SUFFIX,nyaa.si
   - DOMAIN-SUFFIX,oaistatic.com
