@@ -16,9 +16,14 @@ payload:
   - DOMAIN-SUFFIX,adguard.com
   - DOMAIN-SUFFIX,adguard-vpn.com
   - DOMAIN-SUFFIX,adobe.com
+  - DOMAIN-SUFFIX,afp.com
+  - DOMAIN-SUFFIX,afpforum.com
   - DOMAIN-SUFFIX,agenceurope.eu
   - DOMAIN-SUFFIX,agents.media
   - DOMAIN-SUFFIX,agentura.ru
+  - DOMAIN-SUFFIX,ajay.app
+  - DOMAIN-SUFFIX,amdm.ru
+  - DOMAIN-SUFFIX,amedia.vip
   - DOMAIN-SUFFIX,amnezia.org
   - DOMAIN-SUFFIX,aws.amazon.com
   - DOMAIN-SUFFIX,analog.com
@@ -128,6 +133,8 @@ payload:
   - DOMAIN-SUFFIX,dyatel.io
   - DOMAIN-SUFFIX,ebookpdf.com
   - DOMAIN-SUFFIX,echofm.online
+  - DOMAIN-SUFFIX,echokavkaza.com
+  - DOMAIN-SUFFIX,edx.org
   - DOMAIN-SUFFIX,efe.com
   - DOMAIN-SUFFIX,ej.ru
   - DOMAIN-SUFFIX,elmundo.es
@@ -142,6 +149,7 @@ payload:
   - DOMAIN-SUFFIX,eutrp.eu
   - DOMAIN-SUFFIX,exler.ru
   - DOMAIN-SUFFIX,expres.online
+  - DOMAIN-SUFFIX,expressionengine.com
   - DOMAIN-SUFFIX,expresso.pt
   - DOMAIN-SUFFIX,expressvpn.com
   - DOMAIN-SUFFIX,facebook.com
@@ -165,11 +173,12 @@ payload:
   - DOMAIN-SUFFIX,germania.one
   - DOMAIN-SUFFIX,getoutline.org
   - DOMAIN-SUFFIX,getsignal.news
-  - DOMAIN-SUFFIX,yt3.ggpht.com
+  - DOMAIN-SUFFIX,ggpht.com
   - DOMAIN-SUFFIX,github.com
   - DOMAIN-SUFFIX,githubcopilot.com
   - DOMAIN-SUFFIX,githubusercontent.com 
-  - DOMAIN-SUFFIX,glasnaya.media
+  - DOMAIN-SUFFIX,glasnaya.org
+  - DOMAIN-SUFFIX,go-to-library.sk
   - DOMAIN-SUFFIX,godaddy.com
   - DOMAIN-SUFFIX,accounts.google.com
   - DOMAIN-SUFFIX,apis.google.com
@@ -213,6 +222,7 @@ payload:
   - DOMAIN-SUFFIX,is.fi
   - DOMAIN-SUFFIX,istories.media
   - DOMAIN-SUFFIX,itch.io
+  - DOMAIN-SUFFIX,itch.zone
   - DOMAIN-SUFFIX,itsmycity.ru
   - DOMAIN-SUFFIX,jakpolak.com
   - DOMAIN-SUFFIX,jauns.lv
@@ -408,7 +418,14 @@ payload:
   - DOMAIN-SUFFIX,severreal.org
   - DOMAIN-SUFFIX,seznamzpravy.cz
   - DOMAIN-SUFFIX,shadowsocks.org
+  - DOMAIN-SUFFIX,shikimori.me
   - DOMAIN-SUFFIX,sibreal.org
+  - DOMAIN-SUFFIX,signal.art
+  - DOMAIN-SUFFIX,signal.group
+  - DOMAIN-SUFFIX,signal.link
+  - DOMAIN-SUFFIX,signal.me
+  - DOMAIN-SUFFIX,signal.org
+  - DOMAIN-SUFFIX,signal.tube
   - DOMAIN-SUFFIX,skai.gr
   - DOMAIN-SUFFIX,skat.media
   - DOMAIN-SUFFIX,sketchup.com
@@ -436,10 +453,13 @@ payload:
   - DOMAIN-SUFFIX,svt.se
   - DOMAIN-SUFFIX,svtv.org
   - DOMAIN-SUFFIX,syg.ma
+  - DOMAIN-SUFFIX,symfony.com
+  - DOMAIN-SUFFIX,symfonycasts.com
   - DOMAIN-SUFFIX,t.co
+  - DOMAIN-SUFFIX,t-ru.org
   - DOMAIN-SUFFIX,tayga.info
   - DOMAIN-SUFFIX,te-st.org
-  - DOMAIN-SUFFIX,telegraf.by
+  - DOMAIN-SUFFIX,telegraf.by 
   - DOMAIN-SUFFIX,temp-mail.org
   - DOMAIN-SUFFIX,tempmail.plus
   - DOMAIN-SUFFIX,temporary-email.org
@@ -458,6 +478,7 @@ payload:
   - DOMAIN-SUFFIX,top-fon.com
   - DOMAIN-SUFFIX,torrentgalaxy.to
   - DOMAIN-SUFFIX,torproject.org
+  - DOMAIN-SUFFIX,trace.moe
   - DOMAIN-SUFFIX,turantoday.com
   - DOMAIN-SUFFIX,tv2.today
   - DOMAIN-SUFFIX,tvfreedom.io
@@ -474,11 +495,14 @@ payload:
   - DOMAIN-SUFFIX,usa.one
   - DOMAIN-SUFFIX,verstka.media
   - DOMAIN-SUFFIX,verpex.com
+  - DOMAIN-SUFFIX,vesma.today
+  - DOMAIN-SUFFIX,vesma.one
   - DOMAIN-SUFFIX,vesty.co.il
   - DOMAIN-SUFFIX,vice.com
   - DOMAIN-SUFFIX,voanews.com
   - DOMAIN-SUFFIX,vot-tak.tv
   - DOMAIN-SUFFIX,vpngen.org
+  - DOMAIN-SUFFIX,vpnguild.org
   - DOMAIN-SUFFIX,vpnlove.me
   - DOMAIN-SUFFIX,vynesimozg.com
   - DOMAIN-SUFFIX,wdfiles.com
@@ -489,13 +513,14 @@ payload:
   - DOMAIN-SUFFIX,windscribe.com
   - DOMAIN-SUFFIX,wixmp.com
   - DOMAIN-SUFFIX,wonderzine.com
+  - DOMAIN-SUFFIX,wplocker.com
   - DOMAIN-SUFFIX,x.ai
   - DOMAIN-SUFFIX,x.com
   - DOMAIN-SUFFIX,yande.re
   - DOMAIN-SUFFIX,yaoilib.me
   - DOMAIN-SUFFIX,yle.fi
-  - DOMAIN-SUFFIX,youtube.com
   - DOMAIN-SUFFIX,youtu.be
+  - DOMAIN-SUFFIX,youtube.com
   - DOMAIN-SUFFIX,ytimg.com 
   - DOMAIN-SUFFIX,yummyanime.org
   - DOMAIN-SUFFIX,zahav.ru
@@ -504,5 +529,6 @@ payload:
   - DOMAIN-SUFFIX,zeit.de
   - DOMAIN-SUFFIX,zelenka.guru
   - DOMAIN-SUFFIX,zerkalo.io
+  - DOMAIN-SUFFIX,z-library.sk
   - DOMAIN-SUFFIX,zona.media
   - DOMAIN-SUFFIX,zomro.com
