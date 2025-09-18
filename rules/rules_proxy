@@ -15,9 +15,14 @@ ad.nl
 adguard.com
 adguard-vpn.com
 adobe.com
+afp.com
+afpforum.com
 agenceurope.eu
 agents.media
 agentura.ru
+ajay.app
+amdm.ru
+amedia.vip
 amnezia.org
 aws.amazon.com
 analog.com
@@ -129,6 +134,8 @@ dw.com
 dyatel.io
 ebookpdf.com
 echofm.online
+echokavkaza.com
+edx.org
 efe.com
 ej.ru
 elmundo.es
@@ -143,6 +150,7 @@ euroradio.fm
 eutrp.eu
 exler.ru
 expres.online
+expressionengine.com
 expresso.pt
 expressvpn.com
 facebook.com
@@ -166,13 +174,14 @@ gagadget.com
 germania.one
 getoutline.org
 getsignal.news
-yt3.ggpht.com
+ggpht.com
 # for copilot in vscode
 github.com
 githubcopilot.com
 githubusercontent.com # not available
 # end for copilot in vscode
-glasnaya.media
+glasnaya.org
+go-to-library.sk
 godaddy.com
 # google services
 accounts.google.com
@@ -220,6 +229,7 @@ irishtimes.com
 is.fi
 istories.media
 itch.io
+itch.zone
 itsmycity.ru
 jakpolak.com
 jauns.lv
@@ -419,7 +429,14 @@ semnasem.org
 severreal.org
 seznamzpravy.cz
 shadowsocks.org
+shikimori.me
 sibreal.org
+signal.art
+signal.group
+signal.link
+signal.me
+signal.org
+signal.tube
 skai.gr
 skat.media
 sketchup.com
@@ -447,7 +464,10 @@ svoboda.org
 svt.se
 svtv.org
 syg.ma
+symfony.com
+symfonycasts.com
 t.co
+t-ru.org
 tayga.info
 te-st.org
 telegraf.by # not available
@@ -469,6 +489,7 @@ tjournal.ru
 top-fon.com
 torrentgalaxy.to
 torproject.org
+trace.moe
 turantoday.com
 tv2.today
 tvfreedom.io
@@ -485,11 +506,14 @@ uquiz.com
 usa.one
 verstka.media
 verpex.com
+vesma.today
+vesma.one
 vesty.co.il
 vice.com
 voanews.com
 vot-tak.tv
 vpngen.org
+vpnguild.org
 vpnlove.me
 vynesimozg.com
 wdfiles.com
@@ -500,13 +524,14 @@ willytel.de
 windscribe.com
 wixmp.com
 wonderzine.com
+wplocker.com
 x.ai
 x.com
 yande.re
 yaoilib.me
 yle.fi
-youtube.com
 youtu.be
+youtube.com
 ytimg.com # not available
 yummyanime.org
 zahav.ru
@@ -515,5 +540,6 @@ zeflix.online
 zeit.de
 zelenka.guru
 zerkalo.io
+z-library.sk
 zona.media
 zomro.com
