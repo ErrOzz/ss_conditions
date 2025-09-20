@@ -15,8 +15,8 @@ ad.nl
 adguard.com
 adguard-vpn.com
 adobe.com
-afp.com
-afpforum.com
+afp.com # not available
+afpforum.com # not available
 agenceurope.eu
 agents.media
 agentura.ru
@@ -134,7 +134,7 @@ dw.com
 dyatel.io
 ebookpdf.com
 echofm.online
-echokavkaza.com
+echokavkaza.com # not available
 edx.org
 efe.com
 ej.ru
@@ -174,7 +174,7 @@ gagadget.com
 germania.one
 getoutline.org
 getsignal.news
-ggpht.com
+ggpht.com # not available
 # for copilot in vscode
 github.com
 githubcopilot.com
@@ -467,7 +467,7 @@ syg.ma
 symfony.com
 symfonycasts.com
 t.co
-t-ru.org
+t-ru.org # not available
 tayga.info
 te-st.org
 telegraf.by # not available
@@ -506,8 +506,8 @@ uquiz.com
 usa.one
 verstka.media
 verpex.com
-vesma.today
-vesma.one
+vesma.today # not available
+vesma.one # not available
 vesty.co.il
 vice.com
 voanews.com
