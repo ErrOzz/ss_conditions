@@ -11,16 +11,24 @@ proxies:
     type: vless            # Protocol type
     server: your_server_ip # Your server IP (NOT domain!)
     port: your_vless_port  # Port configured in 3x-ui for VLESS/Reality
+    udp: true # If UDP is needed
     uuid: your_user_uuid   # User UUID from 3x-ui
-    network: tcp           # Transport - always tcp for Reality
-    tls: true              # Enable TLS (mandatory for Reality)
+    flow: xtls-rprx-vision
+    # packet-encoding: xudp
+
     # Client parameters for XTLS Reality
-    client-fingerprint: chrome # or firefox, safari, etc. (TLS client fingerprint)
+    tls: true              # Enable TLS (mandatory for Reality)
     servername: target_domain_com # "Fake" domain (e.g., www.microsoft.com) specified in 3x-ui (in serverNames/SNI field)
+    alpn:                  # Application Layer Protocol Negotiation (for masking)
+      - h2
+      - http/1.1
+    client-fingerprint: chrome # or firefox, safari, etc. (TLS client fingerprint)
+    skip-cert-verify: true  # Skip certificate verification (set to true for Reality)
     reality-opts:
       public-key: your_reality_public_key # Public key generated in 3x-ui
       short-id: your_reality_short_id   # Short ID (shortId) generated in 3x-ui (if used)
-    udp: true # If UDP is needed
+
+    network: tcp           # Transport - always tcp for Reality
 
 # Groups definition
 proxy-groups:
