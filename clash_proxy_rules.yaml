@@ -16,8 +16,8 @@ payload:
   - DOMAIN-SUFFIX,adguard.com
   - DOMAIN-SUFFIX,adguard-vpn.com
   - DOMAIN-SUFFIX,adobe.com
-  - DOMAIN-SUFFIX,afp.com
-  - DOMAIN-SUFFIX,afpforum.com
+  - DOMAIN-SUFFIX,afp.com 
+  - DOMAIN-SUFFIX,afpforum.com 
   - DOMAIN-SUFFIX,agenceurope.eu
   - DOMAIN-SUFFIX,agents.media
   - DOMAIN-SUFFIX,agentura.ru
@@ -133,7 +133,7 @@ payload:
   - DOMAIN-SUFFIX,dyatel.io
   - DOMAIN-SUFFIX,ebookpdf.com
   - DOMAIN-SUFFIX,echofm.online
-  - DOMAIN-SUFFIX,echokavkaza.com
+  - DOMAIN-SUFFIX,echokavkaza.com 
   - DOMAIN-SUFFIX,edx.org
   - DOMAIN-SUFFIX,efe.com
   - DOMAIN-SUFFIX,ej.ru
@@ -173,7 +173,7 @@ payload:
   - DOMAIN-SUFFIX,germania.one
   - DOMAIN-SUFFIX,getoutline.org
   - DOMAIN-SUFFIX,getsignal.news
-  - DOMAIN-SUFFIX,ggpht.com
+  - DOMAIN-SUFFIX,ggpht.com 
   - DOMAIN-SUFFIX,github.com
   - DOMAIN-SUFFIX,githubcopilot.com
   - DOMAIN-SUFFIX,githubusercontent.com 
@@ -456,7 +456,7 @@ payload:
   - DOMAIN-SUFFIX,symfony.com
   - DOMAIN-SUFFIX,symfonycasts.com
   - DOMAIN-SUFFIX,t.co
-  - DOMAIN-SUFFIX,t-ru.org
+  - DOMAIN-SUFFIX,t-ru.org 
   - DOMAIN-SUFFIX,tayga.info
   - DOMAIN-SUFFIX,te-st.org
   - DOMAIN-SUFFIX,telegraf.by 
@@ -496,7 +496,7 @@ payload:
   - DOMAIN-SUFFIX,verstka.media
   - DOMAIN-SUFFIX,verpex.com
   - DOMAIN-SUFFIX,vesma.today
-  - DOMAIN-SUFFIX,vesma.one
+  - DOMAIN-SUFFIX,vesma.one 
   - DOMAIN-SUFFIX,vesty.co.il
   - DOMAIN-SUFFIX,vice.com
   - DOMAIN-SUFFIX,voanews.com

@@ -18,8 +18,8 @@
 (?:^|\.)adguard\.com$
 (?:^|\.)adguard-vpn\.com$
 (?:^|\.)adobe\.com$
-(?:^|\.)afp\.com$
-(?:^|\.)afpforum\.com$
+(?:^|\.)afp\.com $
+(?:^|\.)afpforum\.com $
 (?:^|\.)agenceurope\.eu$
 (?:^|\.)agents\.media$
 (?:^|\.)agentura\.ru$
@@ -135,7 +135,7 @@
 (?:^|\.)dyatel\.io$
 (?:^|\.)ebookpdf\.com$
 (?:^|\.)echofm\.online$
-(?:^|\.)echokavkaza\.com$
+(?:^|\.)echokavkaza\.com $
 (?:^|\.)edx\.org$
 (?:^|\.)efe\.com$
 (?:^|\.)ej\.ru$
@@ -175,7 +175,7 @@
 (?:^|\.)germania\.one$
 (?:^|\.)getoutline\.org$
 (?:^|\.)getsignal\.news$
-(?:^|\.)ggpht\.com$
+(?:^|\.)ggpht\.com $
 (?:^|\.)github\.com$
 (?:^|\.)githubcopilot\.com$
 (?:^|\.)githubusercontent\.com $
@@ -458,7 +458,7 @@
 (?:^|\.)symfony\.com$
 (?:^|\.)symfonycasts\.com$
 (?:^|\.)t\.co$
-(?:^|\.)t-ru\.org$
+(?:^|\.)t-ru\.org $
 (?:^|\.)tayga\.info$
 (?:^|\.)te-st\.org$
 (?:^|\.)telegraf\.by $
@@ -498,7 +498,7 @@
 (?:^|\.)verstka\.media$
 (?:^|\.)verpex\.com$
 (?:^|\.)vesma\.today$
-(?:^|\.)vesma\.one$
+(?:^|\.)vesma\.one $
 ^vesty\.co\.il$
 (?:^|\.)vice\.com$
 (?:^|\.)voanews\.com$
