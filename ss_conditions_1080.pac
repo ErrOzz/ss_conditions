@@ -129,7 +129,7 @@ var __BLOCKEDSITES__ = [
   "*.dovod.online",
   "*.doxa.team",
   "*.dumskaya.net",
-  "*.duo cards.com",
+  "*.duocards.com",
   "*.dw.com",
   "*.dyatel.io",
   "*.ebookpdf.com",
