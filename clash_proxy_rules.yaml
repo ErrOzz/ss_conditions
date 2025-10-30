@@ -49,7 +49,7 @@ payload:
   - DOMAIN-SUFFIX,bbci.co.uk
   - DOMAIN-SUFFIX,bellingcat.com
   - DOMAIN-SUFFIX,belsat.eu
-  - DOMAIN-SUFFIX,belsat.pl
+  - DOMAIN-SUFFIX,belsat.pl 
   - DOMAIN-SUFFIX,bereg.io
   - DOMAIN-SUFFIX,bergfreunde.eu
   - DOMAIN-SUFFIX,berlingske.dk
@@ -129,6 +129,7 @@ payload:
   - DOMAIN-SUFFIX,dovod.online
   - DOMAIN-SUFFIX,doxa.team
   - DOMAIN-SUFFIX,dumskaya.net
+  - DOMAIN-SUFFIX,duo cards.com
   - DOMAIN-SUFFIX,dw.com
   - DOMAIN-SUFFIX,dyatel.io
   - DOMAIN-SUFFIX,ebookpdf.com

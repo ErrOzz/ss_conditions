@@ -51,7 +51,7 @@
 (?:^|\.)*\.bbci\.co\.uk$
 (?:^|\.)bellingcat\.com$
 (?:^|\.)belsat\.eu$
-(?:^|\.)belsat\.pl$
+(?:^|\.)belsat\.pl $
 (?:^|\.)bereg\.io$
 (?:^|\.)bergfreunde\.eu$
 (?:^|\.)berlingske\.dk$
@@ -131,6 +131,7 @@
 (?:^|\.)dovod\.online$
 (?:^|\.)doxa\.team$
 (?:^|\.)dumskaya\.net$
+(?:^|\.)duo cards\.com$
 (?:^|\.)dw\.com$
 (?:^|\.)dyatel\.io$
 (?:^|\.)ebookpdf\.com$
