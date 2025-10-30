@@ -10,6 +10,7 @@ var __BLOCKEDSITES__ = [
   "*.444.hu",
   "*.4freerussia.org",
   "9tv.co.il",
+  "*.acast.com ",
   "*.acf.international",
   "*.activatica.org",
   "*.ad.nl",
