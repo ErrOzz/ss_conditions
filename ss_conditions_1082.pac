@@ -213,7 +213,7 @@ var __BLOCKEDSITES__ = [
   "*.idelreal.org",
   "*.ikianime.tv ",
   "*.iltalehti.fi",
-  "*.imagefelivery.net",
+  "*.imagedelivery.net",
   "*.in-fact.org",
   "independent.com.mt",
   "*.independent.ie",
