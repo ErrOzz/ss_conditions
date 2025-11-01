@@ -195,7 +195,7 @@ payload:
   - DOMAIN-SUFFIX,googleapis.com
   - DOMAIN-SUFFIX,googleusercontent.com
   - DOMAIN-SUFFIX,googlevideo.com
-  - DOMAIN-SUFFIX,grani.ru
+  - DOMAIN-SUFFIX,grani.ru 
   - DOMAIN-SUFFIX,graty.me
   - DOMAIN-SUFFIX,greenmangaming.com
   - DOMAIN-SUFFIX,grok.com
@@ -213,6 +213,7 @@ payload:
   - DOMAIN-SUFFIX,idelreal.org
   - DOMAIN-SUFFIX,ikianime.tv 
   - DOMAIN-SUFFIX,iltalehti.fi
+  - DOMAIN-SUFFIX,imagefelivery.net
   - DOMAIN-SUFFIX,in-fact.org
   - DOMAIN-SUFFIX,independent.com.mt
   - DOMAIN-SUFFIX,independent.ie
