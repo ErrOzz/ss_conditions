@@ -512,6 +512,7 @@ var __BLOCKEDSITES__ = [
   "*.vpngen.org",
   "*.vpnguild.org",
   "*.vpnlove.me",
+  "*.vsassets.io",
   "*.vynesimozg.com",
   "*.wdfiles.com",
   "*.weather.com",
