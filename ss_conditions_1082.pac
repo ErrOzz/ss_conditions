@@ -23,6 +23,7 @@ var __BLOCKEDSITES__ = [
   "*.agents.media",
   "*.agentura.ru",
   "*.ajay.app",
+  "*.akamaihd.net",
   "*.amdm.ru",
   "*.amedia.vip",
   "*.amnezia.org",
