@@ -39,6 +39,9 @@ payload:
   - DOMAIN-SUFFIX,appspot.com
   - DOMAIN-SUFFIX,arbat.media
   - DOMAIN-SUFFIX,archiveofourown.org
+  - DOMAIN-SUFFIX,ard.de
+  - DOMAIN-SUFFIX,ardaudiothek.de
+  - DOMAIN-SUFFIX,ardmediathek.de
   - DOMAIN-SUFFIX,arte.tv
   - DOMAIN-SUFFIX,aussiedlerbote.de
   - DOMAIN-SUFFIX,azathabar.com
@@ -88,6 +91,7 @@ payload:
   - DOMAIN-SUFFIX,cyprustimes.com
   - DOMAIN-SUFFIX,cyxymu.info
   - DOMAIN-SUFFIX,dailymotion.com
+  - DOMAIN-SUFFIX,daserste.de
   - DOMAIN-SUFFIX,daringerdes.com
   - DOMAIN-SUFFIX,daz3d.com
   - DOMAIN-SUFFIX,deepstatemap.live
