@@ -500,6 +500,7 @@ var __BLOCKEDSITES__ = [
   "*.upskillstutor.com",
   "*.uquiz.com",
   "*.usa.one",
+  "*.verbformen.ru",
   "*.verstka.media",
   "*.verpex.com",
   "*.vesma.today",
