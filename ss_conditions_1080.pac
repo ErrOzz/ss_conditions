@@ -527,6 +527,7 @@ var __BLOCKEDSITES__ = [
   "*.wplocker.com",
   "*.x.ai",
   "*.x.com",
+  "*.xiti.com",
   "*.yande.re",
   "*.yaoilib.me",
   "*.yle.fi",
