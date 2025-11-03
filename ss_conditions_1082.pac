@@ -104,6 +104,7 @@ var __BLOCKEDSITES__ = [
   "*.demokracija.eu",
   "*.demokracija.si",
   "*.dennikn.sk",
+  "*.deutschlandfunk.de",
   "*.diena.lv",
   "*.digi24.ro",
   "*.digitalocean.com",
