@@ -149,6 +149,7 @@ var __BLOCKEDSITES__ = [
   "*.elmundo.es",
   "*.elpais.com",
   "*.eporner.com",
+  "*.dradio.de",
   "*.err.ee",
   "*.ert.gr",
   "*.ertnews.gr",
