@@ -23,7 +23,7 @@ payload:
   - DOMAIN-SUFFIX,agents.media
   - DOMAIN-SUFFIX,agentura.ru
   - DOMAIN-SUFFIX,ajay.app
-  - DOMAIN-SUFFIX,akamaihd.net
+  - DOMAIN-SUFFIX,akamaihd.net 
   - DOMAIN-SUFFIX,amdm.ru
   - DOMAIN-SUFFIX,amedia.vip
   - DOMAIN-SUFFIX,amnezia.org
@@ -73,6 +73,7 @@ payload:
   - DOMAIN-SUFFIX,cherta.media
   - DOMAIN-SUFFIX,chess.com
   - DOMAIN-SUFFIX,claude.ai
+  - DOMAIN-SUFFIX,cloudinary.com
   - DOMAIN-SUFFIX,cnews.fr
   - DOMAIN-SUFFIX,coda.io
   - DOMAIN-SUFFIX,codacontent.io
@@ -345,7 +346,7 @@ payload:
   - DOMAIN-SUFFIX,openai.com
   - DOMAIN-SUFFIX,openmedia.io
   - DOMAIN-SUFFIX,openwrt.org
-  - DOMAIN-SUFFIX,opposition-news.com
+  - DOMAIN-SUFFIX,opposition-news.com 
   - DOMAIN-SUFFIX,orf.at
   - DOMAIN-SUFFIX,osti.gov
   - DOMAIN-SUFFIX,otkrito.lv
@@ -484,7 +485,7 @@ payload:
   - DOMAIN-SUFFIX,tidal.com
   - DOMAIN-SUFFIX,timesofmalta.com
   - DOMAIN-SUFFIX,tjournal.ru
-  - DOMAIN-SUFFIX,top-fon.com
+  - DOMAIN-SUFFIX,top-fon.com 
   - DOMAIN-SUFFIX,torrentgalaxy.to
   - DOMAIN-SUFFIX,torproject.org
   - DOMAIN-SUFFIX,trace.moe
@@ -505,8 +506,8 @@ payload:
   - DOMAIN-SUFFIX,verbformen.ru
   - DOMAIN-SUFFIX,verstka.media
   - DOMAIN-SUFFIX,verpex.com
-  - DOMAIN-SUFFIX,vesma.today
-  - DOMAIN-SUFFIX,vesma.one 
+  - DOMAIN-SUFFIX,vesma.today 
+  - DOMAIN-SUFFIX,vesma.one
   - DOMAIN-SUFFIX,vesty.co.il
   - DOMAIN-SUFFIX,vice.com
   - DOMAIN-SUFFIX,voanews.com
@@ -527,7 +528,7 @@ payload:
   - DOMAIN-SUFFIX,wplocker.com
   - DOMAIN-SUFFIX,x.ai
   - DOMAIN-SUFFIX,x.com
-  - DOMAIN-SUFFIX,xiti.com
+  - DOMAIN-SUFFIX,xiti.com 
   - DOMAIN-SUFFIX,yande.re
   - DOMAIN-SUFFIX,yaoilib.me
   - DOMAIN-SUFFIX,yle.fi

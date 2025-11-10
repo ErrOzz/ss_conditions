@@ -25,7 +25,7 @@
 (?:^|\.)agents\.media$
 (?:^|\.)agentura\.ru$
 (?:^|\.)ajay\.app$
-(?:^|\.)akamaihd\.net$
+(?:^|\.)akamaihd\.net $
 (?:^|\.)amdm\.ru$
 (?:^|\.)amedia\.vip$
 (?:^|\.)amnezia\.org$
@@ -75,6 +75,7 @@
 (?:^|\.)cherta\.media$
 (?:^|\.)chess\.com$
 (?:^|\.)claude\.ai$
+(?:^|\.)cloudinary\.com$
 (?:^|\.)cnews\.fr$
 (?:^|\.)coda\.io$
 (?:^|\.)codacontent\.io$
@@ -347,7 +348,7 @@
 (?:^|\.)openai\.com$
 (?:^|\.)openmedia\.io$
 (?:^|\.)openwrt\.org$
-(?:^|\.)opposition-news\.com$
+(?:^|\.)opposition-news\.com $
 (?:^|\.)orf\.at$
 (?:^|\.)osti\.gov$
 (?:^|\.)otkrito\.lv$
@@ -486,7 +487,7 @@
 (?:^|\.)tidal\.com$
 (?:^|\.)timesofmalta\.com$
 (?:^|\.)tjournal\.ru$
-(?:^|\.)top-fon\.com$
+(?:^|\.)top-fon\.com $
 (?:^|\.)torrentgalaxy\.to$
 (?:^|\.)torproject\.org$
 (?:^|\.)trace\.moe$
@@ -507,8 +508,8 @@
 (?:^|\.)verbformen\.ru$
 (?:^|\.)verstka\.media$
 (?:^|\.)verpex\.com$
-(?:^|\.)vesma\.today$
-(?:^|\.)vesma\.one $
+(?:^|\.)vesma\.today $
+(?:^|\.)vesma\.one$
 ^vesty\.co\.il$
 (?:^|\.)vice\.com$
 (?:^|\.)voanews\.com$
@@ -529,7 +530,7 @@
 (?:^|\.)wplocker\.com$
 (?:^|\.)x\.ai$
 (?:^|\.)x\.com$
-(?:^|\.)xiti\.com$
+(?:^|\.)xiti\.com $
 (?:^|\.)yande\.re$
 (?:^|\.)yaoilib\.me$
 (?:^|\.)yle\.fi$
