@@ -301,6 +301,7 @@ payload:
   - DOMAIN-SUFFIX,metla.press
   - DOMAIN-SUFFIX,copilot.microsoft.com
   - DOMAIN-SUFFIX,designer.microsoft.com
+  - DOMAIN-SUFFIX,microchip.com
   - DOMAIN-SUFFIX,mignews.com
   - DOMAIN-SUFFIX,miniplay.com
   - DOMAIN-SUFFIX,mintmanga.live
@@ -488,7 +489,7 @@ payload:
   - DOMAIN-SUFFIX,timesofmalta.com
   - DOMAIN-SUFFIX,tjournal.ru
   - DOMAIN-SUFFIX,top-fon.com 
-  - DOMAIN-SUFFIX,torrentgalaxy.to
+  - DOMAIN-SUFFIX,torrentgalaxy.to 
   - DOMAIN-SUFFIX,torproject.org
   - DOMAIN-SUFFIX,trace.moe
   - DOMAIN-SUFFIX,turantoday.com

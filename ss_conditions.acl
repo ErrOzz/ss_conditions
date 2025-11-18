@@ -303,6 +303,7 @@
 (?:^|\.)metla\.press$
 ^copilot\.microsoft\.com$
 ^designer\.microsoft\.com$
+(?:^|\.)microchip\.com$
 (?:^|\.)mignews\.com$
 (?:^|\.)miniplay\.com$
 (?:^|\.)mintmanga\.live$
@@ -490,7 +491,7 @@
 (?:^|\.)timesofmalta\.com$
 (?:^|\.)tjournal\.ru$
 (?:^|\.)top-fon\.com $
-(?:^|\.)torrentgalaxy\.to$
+(?:^|\.)torrentgalaxy\.to $
 (?:^|\.)torproject\.org$
 (?:^|\.)trace\.moe$
 (?:^|\.)turantoday\.com$
