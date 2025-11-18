@@ -26,13 +26,7 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
 
-          git add \
-            ./ss_conditions_*.pac \
-            ./ss_conditions.acl \
-            ./ss_conditions.conf \
-            ./ss_conditions_clash.conf \
-            ./clash_proxy_rules.yaml \
-            || echo "::warning::No generated files found to add. Check deploy script output."
+          git add ./clash_proxy_rules.yaml || echo "::warning::No generated files found to add. Check deploy script output."
 
           if git diff --staged --quiet; then
             echo "No actual changes in generated files to commit."
