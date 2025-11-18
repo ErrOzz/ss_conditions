@@ -8,8 +8,8 @@ CLASH_RULES_OUTPUT_FILE="${OUTPUT_DIR}/clash_proxy_rules.yaml"
 
 # --- Input File Checks ---
 if [[ ! -f "$RULES_FILE" ]]; then
-    echo "::error file=$RULES_FILE::Error: Rules file not found!" >&2
-    exit 1
+  echo "::error file=$RULES_FILE::Error: Rules file not found!" >&2
+  exit 1
 fi
 
 # --- Read and Filter Rules ---
@@ -21,9 +21,6 @@ if [[ ${#filtered_lines[@]} -eq 0 ]]; then
 fi
 echo "Found ${#filtered_lines[@]} rules to process."
 echo "::endgroup::" # End the group
-
-# Note: The script no longer builds PAC/ACL/CONF arrays —
-# we only generate the Clash rule provider file from the filtered rules.
 
 # --- Generate Clash Rule Provider File ---
 echo "::group::Generating Clash Rule Provider file..."
