@@ -1,0 +1,83 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+# external-controller: 127.0.0.1:9090
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - '*.local'
+  nameserver:
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.adguard-dns.com/dns-query # Блокирует рекламу
+  fallback:
+    - https://dns.quad9.net/dns-query
+    - tls://1.1.1.1:853
+  use-system-hosts: true
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+
+proxies:
+  # Iterate through all generated proxies (Panel + Extra)
+  # The 'to_yaml' filter is a custom filter we define in the Python script
+  {% for proxy in all_proxies %}
+  - {{ proxy | to_yaml }}
+  {% endfor %}
+
+proxy-groups:
+  # 1. Automatic Selection: Checks ping and selects the fastest server
+  - name: "♻️ Automatic"
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    tolerance: 50
+    proxies:
+      {% for proxy in all_proxies %}
+      - "{{ proxy.name }}"
+      {% endfor %}
+
+  # 2. Main Proxy Selector: Choose between Auto or specific server manually
+  - name: "🚀 PROXY"
+    type: select
+    proxies:
+      - "♻️ Automatic"
+      {% for proxy in all_proxies %}
+      - "{{ proxy.name }}"
+      {% endfor %}
+
+  # 3. Fallback Selector: For traffic not matched by rules (Your 'OTHER' logic)
+  - name: "🐟 OTHER"
+    type: select
+    proxies:
+      - "🚀 PROXY"
+      - DIRECT
+
+rule-providers:
+  proxy_domains:
+    behavior: classical
+    type: http
+    url: "https://raw.githubusercontent.com/ErrOzz/clash-proxy-rules-gen/refs/heads/main/clash_proxy_rules.yaml"
+    interval: 3600 # in seconds
+    path: ./proxy_domains.yaml # Lockal rule file name
+
+rules:
+  - IP-CIDR,10.0.0.0/24,DIRECT
+  - IP-CIDR,100.64.0.0/22,DIRECT
+  - IP-CIDR,172.16.0.0/20,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - DOMAIN-SUFFIX,local,DIRECT
+  - DOMAIN-SUFFIX,localhost,DIRECT
+
+  - RULE-SET,proxy_domains,"🚀 PROXY"
+
+  # - GEOIP,RU,DIRECT
+
+  - MATCH,"🐟 OTHER"
