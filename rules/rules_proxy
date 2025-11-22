@@ -53,7 +53,7 @@ bbc.com
 *.bbci.co.uk
 bellingcat.com
 belsat.eu
-belsat.pl # not available
+belsat.pl
 bereg.io
 bergfreunde.eu
 berlingske.dk
@@ -208,7 +208,7 @@ google.dev
 googleapis.com
 googleusercontent.com
 googlevideo.com
-gvt1.com # google update de
+gvt1.com # not available google update de
 # end google services
 grani.ru # not available
 graty.me
@@ -555,7 +555,7 @@ ytimg.com # not available
 yummyanime.org
 zahav.ru
 zaodno.org
-zeflix.online
+zeflix.online # not available
 zeit.de
 zelenka.guru
 zerkalo.io
