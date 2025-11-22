@@ -136,18 +136,19 @@ def load_extra_servers():
     """
     Loads additional servers from the local YAML file.
     """
-    file_path = 'extra_servers.yaml'
-    if os.path.exists(file_path):
-        try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                data = yaml.safe_load(f)
-                if isinstance(data, list):
-                    return data
-                return []
-        except Exception as e:
-            print(f"⚠️ Error loading extra servers: {e}")
-            return []
-    return []
+    # Resolve path relative to this script so it works when run from repo root
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(base_dir, 'extra_servers.yaml')
+    if not os.path.exists(file_path):
+        return []
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = yaml.safe_load(f)
+            # Ensure data is a list, otherwise return empty
+            return data if isinstance(data, list) else []
+    except Exception as e:
+        print(f"❌ Error loading extra servers: {e}")
+        return []
 
 def update_gist(files_payload):
     """
@@ -197,6 +198,11 @@ def main():
 
     # 4. Load Extra Servers
     extra_proxies = load_extra_servers()
+    # Debug output you were looking for
+    if extra_proxies:
+        print(f"ℹ️ Loaded {len(extra_proxies)} extra servers from file")
+    else:
+        print("ℹ️ No extra servers loaded")
 
     # 5. Prepare Jinja2 Template
     # Construct absolute path to the templates directory
@@ -224,7 +230,7 @@ def main():
         
         # Create client specific proxy
         client_proxy = base_proxy_config.copy()
-        client_proxy['name'] = f"MY-SERVER-{client_email}" 
+        client_proxy['name'] = inbound["remark"]
         client_proxy['uuid'] = client['id']
         
         # Combine proxies

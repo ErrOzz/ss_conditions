@@ -29,7 +29,7 @@ proxies:
   # Iterate through all generated proxies (Panel + Extra)
   # The 'to_yaml' filter is a custom filter we define in the Python script
   {% for proxy in all_proxies %}
-  - {{ proxy | to_yaml }}
+  - {{ proxy | to_yaml | indent(4) }}
   {% endfor %}
 
 proxy-groups:
