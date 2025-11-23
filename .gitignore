@@ -1,0 +1,9 @@
+# ignore local environment variables file
+config-generator/.env
+
+# ignore generated configuration files
+config-generator/generated_configs/
+
+# ignore virtual environment folders
+.venv/
+venv/

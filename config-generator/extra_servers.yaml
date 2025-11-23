@@ -1,0 +1,25 @@
+# List of extra proxy servers to be added to each client's config.
+# They will be appended to every generated configuration file.
+
+- name: Backup Server
+  type: vless
+  server: backup.example.com
+  port: 443
+  uuid: 88888888-4444-4444-4444-121212121212
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: Your_Public_Key_Here
+    short-id: Your_Short_Id
+  client-fingerprint: chrome
+
+# Example 2 (Trojan)
+# - name: 🇩🇪 German Proxy
+#   type: trojan
+#   server: de.example.com
+#   port: 443
+#   password: my_password
+#   udp: true
+#   sni: de.example.com
