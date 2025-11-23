@@ -27,9 +27,11 @@ dns:
 
 proxies:
   # Iterate through all generated proxies (Panel + Extra)
-  # The 'to_yaml' filter is a custom filter we define in the Python script
-  {% for proxy in all_proxies %}
+  {% for proxy in all_proxies -%}
   - {{ proxy | to_yaml | indent(4) }}
+  {%- if not loop.last %}
+
+  {% endif -%}
   {% endfor %}
 
 proxy-groups:
@@ -40,19 +42,17 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      {% for proxy in all_proxies %}
+      {% for proxy in all_proxies -%}
       - "{{ proxy.name }}"
       {% endfor %}
-
   # 2. Main Proxy Selector: Choose between Auto or specific server manually
   - name: "🚀 PROXY"
     type: select
     proxies:
       - "♻️ Automatic"
-      {% for proxy in all_proxies %}
+      {% for proxy in all_proxies -%}
       - "{{ proxy.name }}"
       {% endfor %}
-
   # 3. Fallback Selector: For traffic not matched by rules (Your 'OTHER' logic)
   - name: "🐟 OTHER"
     type: select

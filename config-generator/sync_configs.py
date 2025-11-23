@@ -5,60 +5,69 @@ import requests
 from jinja2 import Environment, FileSystemLoader
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
+# Load environment variables
 load_dotenv()
 
 # --- Configuration ---
 PANEL_URL = os.getenv("PANEL_URL")
 USERNAME = os.getenv("PANEL_USERNAME")
 PASSWORD = os.getenv("PANEL_PASSWORD")
-# Default to inbound ID 1 if not set
 INBOUND_ID = int(os.getenv("INBOUND_ID", 1))
 GIST_ID = os.getenv("GIST_ID")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-# Host is optional in .env, defaults to parsed value or empty
-SERVER_HOST = os.getenv("SERVER_HOST") 
+SERVER_HOST = os.getenv("SERVER_HOST")
 
 # --- Helper Functions ---
 
 def to_yaml_filter(value):
     """
-    Custom Jinja2 filter to convert a Python dictionary 
-    into a YAML formatted string.
+    Custom Jinja2 filter to convert Python dict to YAML string.
+    sort_keys=False is CRITICAL to maintain the order defined in the dictionary.
     """
     return yaml.dump(value, default_flow_style=False, allow_unicode=True, sort_keys=False).strip()
 
+def strip_comments(text):
+    """
+    Removes YAML comments (lines starting with # and inline comments).
+    Preserves empty lines for readability.
+    """
+    cleaned_lines = []
+    for line in text.splitlines():
+        # 1. Skip full line comments (e.g. "# Settings")
+        if line.strip().startswith('#'):
+            continue
+        
+        # 2. Remove inline comments (e.g. "port: 443 # Default")
+        # We split by " #" (space + hash) to avoid breaking things like colors "#FFF" or URLs
+        if ' #' in line:
+            line = line.split(' #', 1)[0].rstrip()
+            
+        cleaned_lines.append(line)
+        
+    return '\n'.join(cleaned_lines)
+
 def get_panel_session():
-    """
-    Authenticates with the 3x-ui panel and returns a session object 
-    containing the authentication cookies.
-    """
+    """Authenticates with the panel."""
     session = requests.Session()
     login_url = f"{PANEL_URL}/login"
     payload = {'username': USERNAME, 'password': PASSWORD}
     
     try:
-        print(f"🔌 Connecting to panel at: {PANEL_URL}")
         res = session.post(login_url, data=payload)
         res.raise_for_status()
-        
-        response_json = res.json()
-        if response_json.get('success'):
+        if res.json().get('success'):
             print("✅ Login successful")
             return session
         else:
-            print(f"❌ Login failed: {response_json.get('msg')}")
+            print(f"❌ Login failed: {res.json().get('msg')}")
             return None
     except Exception as e:
         print(f"❌ Connection error: {e}")
         return None
 
 def get_inbound_data(session):
-    """
-    Retrieves the list of inbounds via MHSanaei API and finds the specific one by ID.
-    """
+    """Retrieves inbound data via MHSanaei API."""
     try:
-        # MHSanaei API uses GET request
         res = session.get(f"{PANEL_URL}/panel/api/inbounds/list")
         res.raise_for_status()
         
@@ -67,7 +76,6 @@ def get_inbound_data(session):
             print(f"❌ API failure: {data.get('msg')}")
             return None
             
-        # Find the inbound with the matching ID
         inbound_list = data.get('obj', [])
         target = next((i for i in inbound_list if i['id'] == INBOUND_ID), None)
         
@@ -80,82 +88,26 @@ def get_inbound_data(session):
         print(f"❌ API error: {e}")
         return None
 
-def parse_vless_settings(inbound):
-    """
-    Parses the raw JSON settings from 3x-ui (MHSanaei version with camelCase keys).
-    Returns: (base_proxy_dict, clients_list)
-    """
-    try:
-        # 1. Parse nested JSON strings using camelCase keys
-        stream_settings = json.loads(inbound['streamSettings'])
-        settings = json.loads(inbound['settings'])
-    except Exception as e:
-        print(f"❌ Failed to parse inbound JSON settings: {e}")
-        return None, []
-
-    # 2. Determine server address
-    address = SERVER_HOST if SERVER_HOST else "YOUR_SERVER_IP"
-
-    # 3. Construct base proxy object
-    base_proxy = {
-        'type': inbound['protocol'],
-        'server': address,
-        'port': inbound['port'],
-        'network': stream_settings.get('network', 'tcp'),
-        'tls': False,
-        'udp': True,
-    }
-
-    # 4. Handle Security Settings (Reality)
-    security = stream_settings.get('security', 'none')
-    
-    if security == 'reality':
-        base_proxy['tls'] = True
-        base_proxy['flow'] = 'xtls-rprx-vision'
-        base_proxy['client-fingerprint'] = 'chrome'
-        
-        # Extract Reality specific settings
-        reality = stream_settings.get('realitySettings', {})
-        base_proxy['servername'] = reality.get('serverNames', [''])[0]
-        
-        base_proxy['reality-opts'] = {
-            'public-key': reality.get('settings', {}).get('publicKey'),
-            'short-id': reality.get('shortIds', [''])[0]
-        }
-        
-    elif security == 'tls':
-        base_proxy['tls'] = True
-        tls = stream_settings.get('tlsSettings', {})
-        base_proxy['servername'] = tls.get('serverNames', [''])[0]
-
-    # 5. Extract clients list
-    clients = settings.get('clients', [])
-    return base_proxy, clients
-
 def load_extra_servers():
-    """
-    Loads additional servers from the local YAML file.
-    """
-    # Resolve path relative to this script so it works when run from repo root
+    """Loads extra servers using absolute path."""
     base_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(base_dir, 'extra_servers.yaml')
+
     if not os.path.exists(file_path):
         return []
+
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = yaml.safe_load(f)
-            # Ensure data is a list, otherwise return empty
             return data if isinstance(data, list) else []
     except Exception as e:
         print(f"❌ Error loading extra servers: {e}")
         return []
 
 def update_gist(files_payload):
-    """
-    Uploads the generated files to GitHub Gist.
-    """
+    """Uploads to Gist."""
     if not GITHUB_TOKEN or not GIST_ID:
-        print("⚠️ GITHUB_TOKEN or GIST_ID is missing. Skipping upload.")
+        print("⚠️ GITHUB_TOKEN or GIST_ID missing.")
         return
 
     headers = {
@@ -163,49 +115,109 @@ def update_gist(files_payload):
         'Accept': 'application/vnd.github.v3+json',
     }
     
-    # Prepare payload for the API
-    payload = {'files': files_payload}
-    
     try:
         print(f"🚀 Uploading {len(files_payload)} files to Gist...")
-        res = requests.patch(f"https://api.github.com/gists/{GIST_ID}", headers=headers, json=payload)
+        res = requests.patch(f"https://api.github.com/gists/{GIST_ID}", headers=headers, json={'files': files_payload})
         res.raise_for_status()
         print("✅ Gist updated successfully!")
     except Exception as e:
-        print(f"❌ Failed to upload Gist: {e}")
-        # Print detailed response for debugging
-        if 'res' in locals():
-            print(res.text)
+        print(f"❌ Upload failed: {e}")
 
-# --- Main Execution ---
+# --- Core Logic ---
+
+def parse_inbound_json(inbound):
+    """
+    Simply unpacks the JSON strings from the inbound data.
+    """
+    try:
+        stream_settings = json.loads(inbound['streamSettings'])
+        settings = json.loads(inbound['settings'])
+        return stream_settings, settings
+    except Exception as e:
+        print(f"❌ JSON Parsing error: {e}")
+        return None, None
+
+def build_client_proxy(client, inbound, stream_settings, general_settings):
+    """
+    Constructs the dictionary for a specific client following the EXACT requested order.
+    """
+    
+    # 0. Check Protocol
+    if inbound['protocol'] != 'vless':
+        return None
+
+    address = SERVER_HOST if SERVER_HOST else "YOUR_SERVER_IP"
+
+    # Start building dictionary (Insertion order is preserved)
+    proxy = {}
+
+    # --- Block 1: Basic Info ---
+    proxy['name'] = inbound['remark']
+    proxy['type'] = 'vless'
+    proxy['server'] = address
+    proxy['port'] = inbound['port']
+    proxy['udp'] = True
+    proxy['uuid'] = client['id']
+
+    if client.get('flow'):
+        proxy['flow'] = client['flow']
+
+    proxy['packet-encoding'] = 'xudp'
+
+    # --- Block 2: Reality / TLS ---
+    security = stream_settings.get('security', 'none')
+
+    if security == 'reality':
+        proxy['tls'] = True
+        
+        # Reality Settings Extraction
+        reality_settings = stream_settings.get('realitySettings', {})
+        r_settings = reality_settings.get('settings', {})
+        
+        server_names = reality_settings.get('serverNames', [''])
+        proxy['servername'] = server_names[0] if server_names else ""
+
+        proxy['alpn'] = ['h2', 'http/1.1']
+        proxy['client-fingerprint'] = r_settings.get('fingerprint', 'chrome')
+        proxy['skip-cert-verify'] = True
+
+        proxy['reality-opts'] = {
+            'public-key': r_settings.get('publicKey', ''),
+            'short-id': reality_settings.get('shortIds', [''])[0]
+        }
+
+    # --- Block 3: Encryption ---
+    proxy['encryption'] = general_settings.get('encryption', "")
+
+    # --- Block 4: Network ---
+    proxy['network'] = stream_settings.get('network', 'tcp')
+
+    return proxy
 
 def main():
     # 1. Authenticate
     session = get_panel_session()
     if not session: return
 
-    # 2. Get Inbound Information
+    # 2. Get Inbound
     inbound = get_inbound_data(session)
     if not inbound: return
     
-    print(f"ℹ️ Found inbound: {inbound['remark']} (Port: {inbound['port']})")
+    print(f"ℹ️ Processing inbound: {inbound['remark']} ({inbound['protocol']})")
 
-    # 3. Parse Settings
-    base_proxy_config, clients = parse_vless_settings(inbound)
-    if not base_proxy_config: return
-    
-    print(f"ℹ️ Extracted {len(clients)} clients")
+    # 3. Parse JSON Data
+    stream_settings, general_settings = parse_inbound_json(inbound)
+    if not stream_settings: return
+
+    clients = general_settings.get('clients', [])
+    print(f"ℹ️ Found {len(clients)} clients")
 
     # 4. Load Extra Servers
     extra_proxies = load_extra_servers()
-    # Debug output you were looking for
     if extra_proxies:
-        print(f"ℹ️ Loaded {len(extra_proxies)} extra servers from file")
-    else:
-        print("ℹ️ No extra servers loaded")
+        print(f"ℹ️ Loaded {len(extra_proxies)} extra servers")
 
-    # 5. Prepare Jinja2 Template
-    # Construct absolute path to the templates directory
+    # 5. Setup Template
     base_dir = os.path.dirname(os.path.abspath(__file__))
     template_dir = os.path.join(base_dir, 'templates')
     
@@ -218,35 +230,38 @@ def main():
         print(f"❌ Template error: {e}")
         return
 
-    # 6. Generate Configs
+    # 6. Generate & Save
     generated_files_content = {}
     output_dir = os.path.join(base_dir, 'generated_configs')
     os.makedirs(output_dir, exist_ok=True)
     
     for client in clients:
         if not client.get('email') or not client.get('id'): continue
+        
+        client_proxy = build_client_proxy(client, inbound, stream_settings, general_settings)
+        
+        if not client_proxy:
+            continue
 
-        client_email = client['email']
-        
-        # Create client specific proxy
-        client_proxy = base_proxy_config.copy()
-        client_proxy['name'] = inbound["remark"]
-        client_proxy['uuid'] = client['id']
-        
-        # Combine proxies
+        # Combine with extra servers
         all_proxies = [client_proxy] + extra_proxies
         
-        # Render and save
-        config_content = template.render(all_proxies=all_proxies)
+        # Render template
+        raw_content = template.render(all_proxies=all_proxies)
         
-        filename = f"{client_email}.yaml"
-        with open(os.path.join(output_dir, filename), 'w', encoding='utf-8') as f:
+        # NEW: Strip comments
+        config_content = strip_comments(raw_content)
+        
+        filename = f"{client['email']}.yaml"
+        file_path = os.path.join(output_dir, filename)
+        
+        with open(file_path, 'w', encoding='utf-8') as f:
             f.write(config_content)
             
         generated_files_content[filename] = {'content': config_content}
         print(f"📄 Generated: {filename}")
 
-    # 7. Upload to Gist
+    # 7. Upload
     if generated_files_content:
         update_gist(generated_files_content)
     else:
