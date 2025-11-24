@@ -36,29 +36,29 @@ proxies:
 
 proxy-groups:
   # 1. Automatic Selection: Checks ping and selects the fastest server
-  - name: "♻️ Automatic"
+  - name: ♻️ Automatic
     type: url-test
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
     tolerance: 50
     proxies:
       {% for proxy in all_proxies -%}
-      - "{{ proxy.name }}"
+      - {{ proxy.name }}
       {% endfor %}
   # 2. Main Proxy Selector: Choose between Auto or specific server manually
-  - name: "🚀 PROXY"
+  - name: 🚀 PROXY
     type: select
     proxies:
-      - "♻️ Automatic"
+      - ♻️ Automatic
       {% for proxy in all_proxies -%}
-      - "{{ proxy.name }}"
+      - {{ proxy.name }}
       {% endfor %}
   # 3. Fallback Selector: For traffic not matched by rules (Your 'OTHER' logic)
-  - name: "🐟 OTHER"
+  - name: 🐟 OTHER
     type: select
     proxies:
-      - "🚀 PROXY"
       - DIRECT
+      - 🚀 PROXY
 
 rule-providers:
   proxy_domains:
@@ -76,8 +76,8 @@ rules:
   - DOMAIN-SUFFIX,local,DIRECT
   - DOMAIN-SUFFIX,localhost,DIRECT
 
-  - RULE-SET,proxy_domains,"🚀 PROXY"
+  - RULE-SET,proxy_domains,🚀 PROXY
 
   # - GEOIP,RU,DIRECT
 
-  - MATCH,"🐟 OTHER"
+  - MATCH,🐟 OTHER
