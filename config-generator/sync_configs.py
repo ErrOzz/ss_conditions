@@ -16,6 +16,7 @@ INBOUND_ID = int(os.getenv("INBOUND_ID", 1))
 GIST_ID = os.getenv("GIST_ID")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 SERVER_HOST = os.getenv("SERVER_HOST")
+GITHUB_USERNAME = os.getenv("GITHUB_USERNAME")
 
 # --- Helper Functions ---
 
@@ -261,7 +262,26 @@ def main():
         generated_files_content[filename] = {'content': config_content}
         print(f"📄 Generated: {filename}")
 
-    # 7. Upload
+    # 7. Generate Index File (New functionality)
+    if generated_files_content and GITHUB_USERNAME:
+        index_lines = []
+        
+        # Sort filenames for better readability
+        for filename in sorted(generated_files_content.keys()):
+            # Construct raw URL
+            # Format: https://gist.githubusercontent.com/USER/GIST_ID/raw/filename.yaml
+            raw_url = f"https://gist.githubusercontent.com/{GITHUB_USERNAME}/{GIST_ID}/raw/{filename}"
+            
+            # Add to list
+            index_lines.append(f"{filename}:")
+            index_lines.append(f"{raw_url}")
+            index_lines.append("") # Empty line separator
+
+        index_filename = "0 Clash client config files.txt"
+        generated_files_content[index_filename] = {'content': '\n'.join(index_lines)}
+        print(f"📑 Index file generated: {index_filename}")
+
+    # 8. Upload
     if generated_files_content:
         update_gist(generated_files_content)
     else:
